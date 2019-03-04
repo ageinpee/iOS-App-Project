@@ -18,8 +18,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     let dataSource = [URL(fileURLWithPath: Bundle.main.path(forResource: "Die Siedler V Das Erbe der Könige OST- Dario", ofType: "mp3")!),
                       URL(fileURLWithPath: Bundle.main.path(forResource: "Die Siedler V Das Erbe der Könige OST- Das Erbe der Könige", ofType: "mp3")!),
-                      URL(fileURLWithPath: Bundle.main.path(forResource: "Die Siedler V Das Erbe der Könige OST- Ein Dorf in Trümmern", ofType: "mp3")!)]
-    let titles = ["Dario", "Das Erbe der Könige", "Ein Dorf in Trümmern"]
+                      URL(fileURLWithPath: Bundle.main.path(forResource: "Die Siedler V Das Erbe der Könige OST- Ein Dorf in Trümmern", ofType: "mp3")!),
+                      URL(fileURLWithPath: Bundle.main.path(forResource: "Die Siedler V Das Erbe der Könige OST- Willkommen in Cleycourt", ofType: "mp3")!),
+                      URL(fileURLWithPath: Bundle.main.path(forResource: "Die Siedler V Das Erbe der Könige OST- Das Heer aus dem Süden", ofType: "mp3")!),
+                      URL(fileURLWithPath: Bundle.main.path(forResource: "Die Siedler V Das Erbe der Könige OST- Die Festung im schnee", ofType: "mp3")!),
+                      URL(fileURLWithPath: Bundle.main.path(forResource: "Die Siedler V Das Erbe der Könige OST- Evelance", ofType: "mp3")!),
+                      URL(fileURLWithPath: Bundle.main.path(forResource: "Die Siedler V Das Erbe der Könige OST- Prophezeiungen", ofType: "mp3")!),
+                      URL(fileURLWithPath: Bundle.main.path(forResource: "Die Siedler V Das Erbe der Könige OST- Der Königliche Hof", ofType: "mp3")!),
+                      URL(fileURLWithPath: Bundle.main.path(forResource: "Die Siedler V Das Erbe der Könige OST- Im sicheren Hafen", ofType: "mp3")!),
+                      URL(fileURLWithPath: Bundle.main.path(forResource: "Die Siedler V Das Erbe der Könige OST- Reise gen Süden", ofType: "mp3")!),
+                      URL(fileURLWithPath: Bundle.main.path(forResource: "Die Siedler V Das Erbe der Könige OST- Norfolk", ofType: "mp3")!),
+                      URL(fileURLWithPath: Bundle.main.path(forResource: "Die Siedler V Das Erbe der Könige OST- Der schwarze Ritter", ofType: "mp3")!),]
+    let titles = ["Dario", "Das Erbe der Könige", "Ein Dorf in Trümmern", "Willkommen in Cleycourt", "Das Heer aus dem Süden", "Die Festung im Schnee", "Evelance", "Prophezeiungen", "Der Königliche Hof", "Im sicheren Hafen", "Reise gen Süden", "Norfolk", "Der schwarze Ritter"]
     var currentSelected = URL(fileURLWithPath: Bundle.main.path(forResource: "Die Siedler V Das Erbe der Könige OST- Dario", ofType: "mp3")!)
     var audioPlayer = AVAudioPlayer()
     

@@ -12,6 +12,19 @@
 		921771BB22281F4800DE9E08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921771B922281F4800DE9E08 /* Main.storyboard */; };
 		921771BD22281F4900DE9E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 921771BC22281F4900DE9E08 /* Assets.xcassets */; };
 		921771C022281F4900DE9E08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921771BE22281F4900DE9E08 /* LaunchScreen.storyboard */; };
+		92CA8085222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Prophezeiungen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92CA8078222D489A00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Prophezeiungen.mp3 */; };
+		92CA8086222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Das Heer aus dem Süden.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92CA8079222D489B00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Das Heer aus dem Süden.mp3 */; };
+		92CA8087222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Der schwarze Ritter.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92CA807A222D489C00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Der schwarze Ritter.mp3 */; };
+		92CA8088222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Norfolk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92CA807B222D489C00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Norfolk.mp3 */; };
+		92CA8089222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Die Festung im schnee.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92CA807C222D489D00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Die Festung im schnee.mp3 */; };
+		92CA808A222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Reise gen Süden.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92CA807D222D489E00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Reise gen Süden.mp3 */; };
+		92CA808B222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Arbeit und Aufbau.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92CA807E222D489F00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Arbeit und Aufbau.mp3 */; };
+		92CA808C222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Willkommen in Cleycourt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92CA807F222D489F00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Willkommen in Cleycourt.mp3 */; };
+		92CA808D222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Evelance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92CA8080222D48A000DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Evelance.mp3 */; };
+		92CA808E222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Darios Erbe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92CA8081222D48A100DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Darios Erbe.mp3 */; };
+		92CA808F222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Der Königliche Hof.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92CA8082222D48A100DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Der Königliche Hof.mp3 */; };
+		92CA8090222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Im sicheren Hafen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92CA8083222D48A200DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Im sicheren Hafen.mp3 */; };
+		92CA8091222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Mary de Mortifechet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92CA8084222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Mary de Mortifechet.mp3 */; };
 		92E34D4C222D219C006B954C /* Die Siedler V Das Erbe der Könige OST- Dario.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92E34D4B222D219C006B954C /* Die Siedler V Das Erbe der Könige OST- Dario.mp3 */; };
 		92E34D4E222D2D5B006B954C /* Die Siedler V Das Erbe der Könige OST- Das Erbe der Könige.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92E34D4D222D2D5B006B954C /* Die Siedler V Das Erbe der Könige OST- Das Erbe der Könige.mp3 */; };
 		92E34D50222D2D9B006B954C /* Die Siedler V Das Erbe der Könige OST- Ein Dorf in Trümmern.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92E34D4F222D2D9B006B954C /* Die Siedler V Das Erbe der Könige OST- Ein Dorf in Trümmern.mp3 */; };
@@ -26,6 +39,19 @@
 		921771BC22281F4900DE9E08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		921771BF22281F4900DE9E08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		921771C122281F4900DE9E08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92CA8078222D489A00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Prophezeiungen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Die Siedler V Das Erbe der Könige OST- Prophezeiungen.mp3"; sourceTree = "<group>"; };
+		92CA8079222D489B00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Das Heer aus dem Süden.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Die Siedler V Das Erbe der Könige OST- Das Heer aus dem Süden.mp3"; sourceTree = "<group>"; };
+		92CA807A222D489C00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Der schwarze Ritter.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Die Siedler V Das Erbe der Könige OST- Der schwarze Ritter.mp3"; sourceTree = "<group>"; };
+		92CA807B222D489C00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Norfolk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Die Siedler V Das Erbe der Könige OST- Norfolk.mp3"; sourceTree = "<group>"; };
+		92CA807C222D489D00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Die Festung im schnee.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Die Siedler V Das Erbe der Könige OST- Die Festung im schnee.mp3"; sourceTree = "<group>"; };
+		92CA807D222D489E00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Reise gen Süden.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Die Siedler V Das Erbe der Könige OST- Reise gen Süden.mp3"; sourceTree = "<group>"; };
+		92CA807E222D489F00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Arbeit und Aufbau.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Die Siedler V Das Erbe der Könige OST- Arbeit und Aufbau.mp3"; sourceTree = "<group>"; };
+		92CA807F222D489F00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Willkommen in Cleycourt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Die Siedler V Das Erbe der Könige OST- Willkommen in Cleycourt.mp3"; sourceTree = "<group>"; };
+		92CA8080222D48A000DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Evelance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Die Siedler V Das Erbe der Könige OST- Evelance.mp3"; sourceTree = "<group>"; };
+		92CA8081222D48A100DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Darios Erbe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Die Siedler V Das Erbe der Könige OST- Darios Erbe.mp3"; sourceTree = "<group>"; };
+		92CA8082222D48A100DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Der Königliche Hof.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Die Siedler V Das Erbe der Könige OST- Der Königliche Hof.mp3"; sourceTree = "<group>"; };
+		92CA8083222D48A200DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Im sicheren Hafen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Die Siedler V Das Erbe der Könige OST- Im sicheren Hafen.mp3"; sourceTree = "<group>"; };
+		92CA8084222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Mary de Mortifechet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Die Siedler V Das Erbe der Könige OST- Mary de Mortifechet.mp3"; sourceTree = "<group>"; };
 		92E34D4B222D219C006B954C /* Die Siedler V Das Erbe der Könige OST- Dario.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Die Siedler V Das Erbe der Könige OST- Dario.mp3"; sourceTree = "<group>"; };
 		92E34D4D222D2D5B006B954C /* Die Siedler V Das Erbe der Könige OST- Das Erbe der Könige.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Die Siedler V Das Erbe der Könige OST- Das Erbe der Könige.mp3"; sourceTree = "<group>"; };
 		92E34D4F222D2D9B006B954C /* Die Siedler V Das Erbe der Könige OST- Ein Dorf in Trümmern.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Die Siedler V Das Erbe der Könige OST- Ein Dorf in Trümmern.mp3"; sourceTree = "<group>"; };
@@ -80,6 +106,19 @@
 				92E34D4B222D219C006B954C /* Die Siedler V Das Erbe der Könige OST- Dario.mp3 */,
 				92E34D4D222D2D5B006B954C /* Die Siedler V Das Erbe der Könige OST- Das Erbe der Könige.mp3 */,
 				92E34D4F222D2D9B006B954C /* Die Siedler V Das Erbe der Könige OST- Ein Dorf in Trümmern.mp3 */,
+				92CA807E222D489F00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Arbeit und Aufbau.mp3 */,
+				92CA8081222D48A100DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Darios Erbe.mp3 */,
+				92CA8079222D489B00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Das Heer aus dem Süden.mp3 */,
+				92CA8082222D48A100DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Der Königliche Hof.mp3 */,
+				92CA807A222D489C00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Der schwarze Ritter.mp3 */,
+				92CA807C222D489D00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Die Festung im schnee.mp3 */,
+				92CA8080222D48A000DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Evelance.mp3 */,
+				92CA8083222D48A200DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Im sicheren Hafen.mp3 */,
+				92CA8084222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Mary de Mortifechet.mp3 */,
+				92CA807B222D489C00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Norfolk.mp3 */,
+				92CA8078222D489A00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Prophezeiungen.mp3 */,
+				92CA807D222D489E00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Reise gen Süden.mp3 */,
+				92CA807F222D489F00DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Willkommen in Cleycourt.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -142,12 +181,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92CA808D222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Evelance.mp3 in Resources */,
+				92CA8087222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Der schwarze Ritter.mp3 in Resources */,
 				921771C022281F4900DE9E08 /* LaunchScreen.storyboard in Resources */,
+				92CA8085222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Prophezeiungen.mp3 in Resources */,
 				92E34D4E222D2D5B006B954C /* Die Siedler V Das Erbe der Könige OST- Das Erbe der Könige.mp3 in Resources */,
+				92CA8091222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Mary de Mortifechet.mp3 in Resources */,
+				92CA808C222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Willkommen in Cleycourt.mp3 in Resources */,
+				92CA808A222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Reise gen Süden.mp3 in Resources */,
 				921771BD22281F4900DE9E08 /* Assets.xcassets in Resources */,
+				92CA8089222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Die Festung im schnee.mp3 in Resources */,
+				92CA8090222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Im sicheren Hafen.mp3 in Resources */,
+				92CA8088222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Norfolk.mp3 in Resources */,
+				92CA8086222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Das Heer aus dem Süden.mp3 in Resources */,
 				921771BB22281F4800DE9E08 /* Main.storyboard in Resources */,
+				92CA808F222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Der Königliche Hof.mp3 in Resources */,
 				92E34D50222D2D9B006B954C /* Die Siedler V Das Erbe der Könige OST- Ein Dorf in Trümmern.mp3 in Resources */,
 				92E34D4C222D219C006B954C /* Die Siedler V Das Erbe der Könige OST- Dario.mp3 in Resources */,
+				92CA808E222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Darios Erbe.mp3 in Resources */,
+				92CA808B222D48A300DEA0D2 /* Die Siedler V Das Erbe der Könige OST- Arbeit und Aufbau.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
