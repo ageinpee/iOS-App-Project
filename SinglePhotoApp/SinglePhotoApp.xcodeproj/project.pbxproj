@@ -12,6 +12,9 @@
 		921771BB22281F4800DE9E08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921771B922281F4800DE9E08 /* Main.storyboard */; };
 		921771BD22281F4900DE9E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 921771BC22281F4900DE9E08 /* Assets.xcassets */; };
 		921771C022281F4900DE9E08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921771BE22281F4900DE9E08 /* LaunchScreen.storyboard */; };
+		92E34D4C222D219C006B954C /* Die Siedler V Das Erbe der Könige OST- Dario.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92E34D4B222D219C006B954C /* Die Siedler V Das Erbe der Könige OST- Dario.mp3 */; };
+		92E34D4E222D2D5B006B954C /* Die Siedler V Das Erbe der Könige OST- Das Erbe der Könige.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92E34D4D222D2D5B006B954C /* Die Siedler V Das Erbe der Könige OST- Das Erbe der Könige.mp3 */; };
+		92E34D50222D2D9B006B954C /* Die Siedler V Das Erbe der Könige OST- Ein Dorf in Trümmern.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92E34D4F222D2D9B006B954C /* Die Siedler V Das Erbe der Könige OST- Ein Dorf in Trümmern.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		921771BC22281F4900DE9E08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		921771BF22281F4900DE9E08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		921771C122281F4900DE9E08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92E34D4B222D219C006B954C /* Die Siedler V Das Erbe der Könige OST- Dario.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Die Siedler V Das Erbe der Könige OST- Dario.mp3"; sourceTree = "<group>"; };
+		92E34D4D222D2D5B006B954C /* Die Siedler V Das Erbe der Könige OST- Das Erbe der Könige.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Die Siedler V Das Erbe der Könige OST- Das Erbe der Könige.mp3"; sourceTree = "<group>"; };
+		92E34D4F222D2D9B006B954C /* Die Siedler V Das Erbe der Könige OST- Ein Dorf in Trümmern.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Die Siedler V Das Erbe der Könige OST- Ein Dorf in Trümmern.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 		921771B422281F4800DE9E08 /* SinglePhotoApp */ = {
 			isa = PBXGroup;
 			children = (
+				92E34D4A222D217B006B954C /* Sounds */,
 				921771B522281F4800DE9E08 /* AppDelegate.swift */,
 				921771B722281F4800DE9E08 /* ViewController.swift */,
 				921771B922281F4800DE9E08 /* Main.storyboard */,
@@ -62,6 +69,16 @@
 				921771C122281F4900DE9E08 /* Info.plist */,
 			);
 			path = SinglePhotoApp;
+			sourceTree = "<group>";
+		};
+		92E34D4A222D217B006B954C /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				92E34D4B222D219C006B954C /* Die Siedler V Das Erbe der Könige OST- Dario.mp3 */,
+				92E34D4D222D2D5B006B954C /* Die Siedler V Das Erbe der Könige OST- Das Erbe der Könige.mp3 */,
+				92E34D4F222D2D9B006B954C /* Die Siedler V Das Erbe der Könige OST- Ein Dorf in Trümmern.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,8 +140,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				921771C022281F4900DE9E08 /* LaunchScreen.storyboard in Resources */,
+				92E34D4E222D2D5B006B954C /* Die Siedler V Das Erbe der Könige OST- Das Erbe der Könige.mp3 in Resources */,
 				921771BD22281F4900DE9E08 /* Assets.xcassets in Resources */,
 				921771BB22281F4800DE9E08 /* Main.storyboard in Resources */,
+				92E34D50222D2D9B006B954C /* Die Siedler V Das Erbe der Könige OST- Ein Dorf in Trümmern.mp3 in Resources */,
+				92E34D4C222D219C006B954C /* Die Siedler V Das Erbe der Könige OST- Dario.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

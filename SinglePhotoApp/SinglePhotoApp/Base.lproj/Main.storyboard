@@ -21,16 +21,58 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glacier_cave_man_120888_3840x2400" translatesAutoresizingMaskIntoConstraints="NO" id="u6K-RW-Uss">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oa9-YH-0Bi">
+                                <rect key="frame" x="94.666666666666686" y="119" width="75" height="75"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="Brt-U1-rZK"/>
+                                    <constraint firstAttribute="width" constant="75" id="HoL-8r-rUr"/>
+                                </constraints>
+                                <state key="normal" title="Play" image="icon_play">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="playButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gEV-Wa-EAH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOk-Xp-7MS">
+                                <rect key="frame" x="244.66666666666663" y="119" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="GJj-26-3GE"/>
+                                    <constraint firstAttribute="width" constant="75" id="g5d-Hy-4en"/>
+                                </constraints>
+                                <state key="normal" title="Stop" image="icon_stop">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ISj-Lu-B4J"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9T0-1W-iP2">
+                                <rect key="frame" x="0.0" y="546" width="414" height="216"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Oa9-YH-0Bi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="8P9-WL-mjm"/>
+                            <constraint firstItem="Oa9-YH-0Bi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-75" id="GhJ-dm-rap"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u6K-RW-Uss" secondAttribute="trailing" id="Na1-ov-q2V"/>
+                            <constraint firstItem="9T0-1W-iP2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="TGk-ET-aS1"/>
+                            <constraint firstItem="9T0-1W-iP2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="a2b-0e-QrZ"/>
                             <constraint firstItem="u6K-RW-Uss" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bV1-TR-Gr3"/>
                             <constraint firstItem="u6K-RW-Uss" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bWe-HI-enT"/>
+                            <constraint firstItem="cOk-Xp-7MS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="75" id="c66-sW-34g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9T0-1W-iP2" secondAttribute="bottom" constant="100" id="oaV-LM-ffR"/>
                             <constraint firstAttribute="bottom" secondItem="u6K-RW-Uss" secondAttribute="bottom" id="rdw-2v-IXt"/>
+                            <constraint firstItem="cOk-Xp-7MS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="uKA-jp-fPn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="playButton" destination="Oa9-YH-0Bi" id="VLs-f8-41Q"/>
+                        <outlet property="songPicker" destination="9T0-1W-iP2" id="S1W-cK-aYT"/>
+                        <outlet property="stopButton" destination="cOk-Xp-7MS" id="AIb-ya-iLe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -38,5 +80,7 @@
     </scenes>
     <resources>
         <image name="glacier_cave_man_120888_3840x2400" width="3840" height="2400"/>
+        <image name="icon_play" width="153.19148254394531" height="153.19148254394531"/>
+        <image name="icon_stop" width="153.19148254394531" height="153.19148254394531"/>
     </resources>
 </document>
