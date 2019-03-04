@@ -14,6 +14,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var songPicker: UIPickerView!
+    @IBOutlet weak var pickerBackgroundView: UIView!
     
     let dataSource = [URL(fileURLWithPath: Bundle.main.path(forResource: "Die Siedler V Das Erbe der Könige OST- Dario", ofType: "mp3")!),
                       URL(fileURLWithPath: Bundle.main.path(forResource: "Die Siedler V Das Erbe der Könige OST- Das Erbe der Könige", ofType: "mp3")!),
@@ -26,7 +27,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.setupButtons()
-        self.songPicker.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        self.pickerBackgroundView.setGradientBackground(colorOne: UIColor.black.withAlphaComponent(0.0),
+                                              colorTwo: UIColor.black.withAlphaComponent(0.7))
         
         currentSelected = dataSource[0]
         songPicker.delegate = self
@@ -63,15 +65,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func setupButtons() {
-        self.playButton.backgroundColor = UIColor.darkGray.withAlphaComponent(0.6)
+        self.playButton.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         self.playButton.layer.cornerRadius = 10
         self.playButton.layer.borderColor = UIColor.white.cgColor
         self.playButton.layer.borderWidth = 1
-        self.playButton.image
+        self.playButton.setImage(UIImage(named: "icon_play") as! UIImage, for: .normal)
+        self.playButton.imageEdgeInsets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
         
-        self.stopButton.backgroundColor = UIColor.darkGray.withAlphaComponent(0.6)
+        self.stopButton.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         self.stopButton.layer.cornerRadius = 10
         self.stopButton.layer.borderColor = UIColor.white.cgColor
         self.stopButton.layer.borderWidth = 1
+        self.stopButton.setImage(UIImage(named: "icon_stop") as! UIImage, for: .normal)
+        self.stopButton.imageEdgeInsets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
     }
 }

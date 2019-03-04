@@ -48,13 +48,18 @@
                                     <action selector="stopButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ISj-Lu-B4J"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S9K-if-Yz0">
+                                <rect key="frame" x="0.0" y="596" width="414" height="216"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9T0-1W-iP2">
-                                <rect key="frame" x="0.0" y="546" width="414" height="216"/>
+                                <rect key="frame" x="0.0" y="596" width="414" height="216"/>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Oa9-YH-0Bi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="8P9-WL-mjm"/>
+                            <constraint firstItem="S9K-if-Yz0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FDj-yd-A2H"/>
                             <constraint firstItem="Oa9-YH-0Bi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-75" id="GhJ-dm-rap"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u6K-RW-Uss" secondAttribute="trailing" id="Na1-ov-q2V"/>
                             <constraint firstItem="9T0-1W-iP2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="TGk-ET-aS1"/>
@@ -62,13 +67,17 @@
                             <constraint firstItem="u6K-RW-Uss" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bV1-TR-Gr3"/>
                             <constraint firstItem="u6K-RW-Uss" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bWe-HI-enT"/>
                             <constraint firstItem="cOk-Xp-7MS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="75" id="c66-sW-34g"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9T0-1W-iP2" secondAttribute="bottom" constant="100" id="oaV-LM-ffR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="S9K-if-Yz0" secondAttribute="bottom" constant="50" id="cj9-uX-xcl"/>
+                            <constraint firstItem="S9K-if-Yz0" firstAttribute="width" secondItem="9T0-1W-iP2" secondAttribute="width" id="jqf-v0-ebT"/>
+                            <constraint firstItem="S9K-if-Yz0" firstAttribute="height" secondItem="9T0-1W-iP2" secondAttribute="height" id="oTG-9R-q6R"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9T0-1W-iP2" secondAttribute="bottom" constant="50" id="oaV-LM-ffR"/>
                             <constraint firstAttribute="bottom" secondItem="u6K-RW-Uss" secondAttribute="bottom" id="rdw-2v-IXt"/>
                             <constraint firstItem="cOk-Xp-7MS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="uKA-jp-fPn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="pickerBackgroundView" destination="S9K-if-Yz0" id="KfR-u7-YhV"/>
                         <outlet property="playButton" destination="Oa9-YH-0Bi" id="VLs-f8-41Q"/>
                         <outlet property="songPicker" destination="9T0-1W-iP2" id="S1W-cK-aYT"/>
                         <outlet property="stopButton" destination="cOk-Xp-7MS" id="AIb-ya-iLe"/>
