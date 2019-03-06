@@ -13,6 +13,9 @@
 		924A9EC1222DD69A0093C2F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 924A9EBF222DD69A0093C2F2 /* Main.storyboard */; };
 		924A9EC3222DD69D0093C2F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 924A9EC2222DD69D0093C2F2 /* Assets.xcassets */; };
 		924A9EC6222DD69D0093C2F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 924A9EC4222DD69D0093C2F2 /* LaunchScreen.storyboard */; };
+		924A9ECE22302BE30093C2F2 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A9ECD22302BE30093C2F2 /* Game.swift */; };
+		924A9ED022302C940093C2F2 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A9ECF22302C940093C2F2 /* GameBoard.swift */; };
+		924A9ED2223034640093C2F2 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A9ED1223034640093C2F2 /* Enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		924A9EC2222DD69D0093C2F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		924A9EC5222DD69D0093C2F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		924A9EC7222DD69D0093C2F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		924A9ECD22302BE30093C2F2 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		924A9ECF22302C940093C2F2 /* GameBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
+		924A9ED1223034640093C2F2 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				924A9EBB222DD69A0093C2F2 /* FirstViewController.swift */,
 				924A9EBD222DD69A0093C2F2 /* SecondViewController.swift */,
 				924A9EBF222DD69A0093C2F2 /* Main.storyboard */,
+				924A9ECD22302BE30093C2F2 /* Game.swift */,
+				924A9ECF22302C940093C2F2 /* GameBoard.swift */,
+				924A9ED1223034640093C2F2 /* Enums.swift */,
 				924A9EC2222DD69D0093C2F2 /* Assets.xcassets */,
 				924A9EC4222DD69D0093C2F2 /* LaunchScreen.storyboard */,
 				924A9EC7222DD69D0093C2F2 /* Info.plist */,
@@ -140,7 +149,10 @@
 			files = (
 				924A9EBE222DD69A0093C2F2 /* SecondViewController.swift in Sources */,
 				924A9EBA222DD69A0093C2F2 /* AppDelegate.swift in Sources */,
+				924A9ED022302C940093C2F2 /* GameBoard.swift in Sources */,
 				924A9EBC222DD69A0093C2F2 /* FirstViewController.swift in Sources */,
+				924A9ED2223034640093C2F2 /* Enums.swift in Sources */,
+				924A9ECE22302BE30093C2F2 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
