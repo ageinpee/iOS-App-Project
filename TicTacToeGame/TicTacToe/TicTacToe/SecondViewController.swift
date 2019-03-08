@@ -21,8 +21,6 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var winnerLabel: UILabel!
     
-    var crossFlag = true // used to decide weather a X or O is written in the box
-    var tickCount = 0
     let game = Game()
     
     override func viewDidLoad() {
@@ -78,17 +76,10 @@ class SecondViewController: UIViewController {
         self.winnerLabel.layer.borderWidth = 0.5
     }
     
-    @IBAction func ticked(sender: UIButton) {
-        if sender.title(for: .normal) == "" {
-            if self.crossFlag == true {
-                sender.setTitle("X", for: .normal)
-                self.game.setField(at: sender.tag, value: true, for: Player.X)
-                crossFlag = false
-            } else {
-                sender.setTitle("O", for: .normal)
-                self.game.setField(at: sender.tag, value: true, for: Player.O)
-                crossFlag = true
-            }
+    @IBAction func tick(sender: UIButton) {
+        if self.game.getState(at: sender.tag, for: Player.X) == FieldState.E && self.game.getState(at: sender.tag, for: Player.O) == FieldState.E {
+            let resultingPlayer = self.game.setField(at: sender.tag, value: true)
+            sender.setTitle(resultingPlayer.rawValue, for: .normal)
         } else {
             let animation = CABasicAnimation(keyPath: "position")
             animation.duration = 0.05
@@ -106,28 +97,26 @@ class SecondViewController: UIViewController {
         for button in self.tics {
             button.setTitle("", for: .normal)
         }
-        self.crossFlag = true
         self.winnerLabel.isHidden = true
-        self.tickCount = 0
         self.game.clear()
     }
     
     private func checkState() {
         //First Idea: IF IF IF --> Second Idea: magic Square (maybe implemented later or for bigger games)
-        if (self.game.ckeckStates() == FieldState.X) {
+        if self.game.checkStates() == FieldState.X {
             // Cross Wins!
-            self.winnerLabel.text = "Cross Wins!"
+            self.winnerLabel.text = " Cross Wins! "
             self.winnerLabel.isHidden = false
             print("Cross Wins")
-        } else if (self.game.ckeckStates() == FieldState.O) {
+        } else if self.game.checkStates() == FieldState.O {
             // Circle Wins!
-            self.winnerLabel.text = "Circle Wins!"
+            self.winnerLabel.text = " Circle Wins! "
             self.winnerLabel.isHidden = false
             print("Circle Wins")
-        }
-        if self.tickCount == 9 {
-            //Tie!
-            print("Tie")
+        } else if self.game.checkStates() == FieldState.T {
+            // Tie
+            self.winnerLabel.text = " Tie "
+            self.winnerLabel.isHidden = false
         }
     }
 }

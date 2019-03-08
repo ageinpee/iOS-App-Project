@@ -173,7 +173,10 @@
                                         </connections>
                                     </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6r5-DQ-Bae">
-                                        <rect key="frame" x="170" y="366.66666666666669" width="74.333333333333314" height="36"/>
+                                        <rect key="frame" x="107" y="366.66666666666669" width="200" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="XYO-uC-GyH"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -202,17 +205,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
                     <connections>
-                        <outlet property="bottomCenter" destination="x8V-VT-bmW" id="cs0-Vl-OFi"/>
-                        <outlet property="bottomLeft" destination="U3o-VH-vzN" id="oS0-yc-a95"/>
-                        <outlet property="bottomRight" destination="2DE-7j-GM4" id="6F2-Kb-2PV"/>
-                        <outlet property="centerCenter" destination="ztb-WV-CI1" id="9Tp-LW-1gl"/>
-                        <outlet property="centerLeft" destination="PSW-9A-XKd" id="3LJ-Rc-zK8"/>
-                        <outlet property="centerRight" destination="hVx-vO-60K" id="RWK-KB-XVX"/>
                         <outlet property="clearButton" destination="ouI-xq-dT6" id="cij-iE-0CC"/>
                         <outlet property="gameView" destination="Fcl-34-I5m" id="lNA-h2-fcf"/>
-                        <outlet property="topCenter" destination="ahK-2t-2CD" id="5UU-Q4-X8v"/>
-                        <outlet property="topLeft" destination="WFC-nK-FKv" id="4xx-wi-qc0"/>
-                        <outlet property="topRight" destination="Qfu-ES-CHr" id="Og7-lu-mrN"/>
                         <outlet property="winnerLabel" destination="6r5-DQ-Bae" id="4oA-uo-noB"/>
                         <outletCollection property="tics" destination="WFC-nK-FKv" collectionClass="NSMutableArray" id="nln-DO-aEf"/>
                         <outletCollection property="tics" destination="ahK-2t-2CD" collectionClass="NSMutableArray" id="MPm-23-pT0"/>
@@ -252,7 +246,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="top-left"/>
                                                 <connections>
-                                                    <action selector="tickedWithSender:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="l0j-Be-ECc"/>
+                                                    <action selector="tickWithSender:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="IS4-W4-Igx"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNA-BT-dIy" userLabel="top-center">
@@ -260,7 +254,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="top-center"/>
                                                 <connections>
-                                                    <action selector="tickedWithSender:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="hWC-yU-318"/>
+                                                    <action selector="tickWithSender:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="k22-am-wbM"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULt-Ft-dOP" userLabel="top-right">
@@ -268,7 +262,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="top-right"/>
                                                 <connections>
-                                                    <action selector="tickedWithSender:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="DUu-Tm-gMP"/>
+                                                    <action selector="tickWithSender:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="8R3-vc-RcS"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="weY-H1-gnk" userLabel="center-left">
@@ -276,7 +270,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="center-left"/>
                                                 <connections>
-                                                    <action selector="tickedWithSender:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="W5k-gO-5k4"/>
+                                                    <action selector="tickWithSender:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="vaM-dU-Z62"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kL0-uf-nBC" userLabel="center-center">
@@ -284,7 +278,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="center-center"/>
                                                 <connections>
-                                                    <action selector="tickedWithSender:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="vtx-kY-XAY"/>
+                                                    <action selector="tickWithSender:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="6u9-um-i7K"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPV-tZ-UuH" userLabel="center-right">
@@ -292,7 +286,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="center-right"/>
                                                 <connections>
-                                                    <action selector="tickedWithSender:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="hfz-UP-XzI"/>
+                                                    <action selector="tickWithSender:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="fsy-NB-zwR"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8MM-qb-uaW" userLabel="bottom-left">
@@ -300,7 +294,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="bottom-left"/>
                                                 <connections>
-                                                    <action selector="tickedWithSender:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="zG5-pF-l3Q"/>
+                                                    <action selector="tickWithSender:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="FeW-VD-H9q"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cU7-do-6vh" userLabel="bottom-center">
@@ -308,7 +302,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="bottom-center"/>
                                                 <connections>
-                                                    <action selector="tickedWithSender:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Md0-Ul-vUo"/>
+                                                    <action selector="tickWithSender:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="QOF-Nh-ETN"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQK-yY-bCS" userLabel="bottom-right">
@@ -316,7 +310,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="bottom-right"/>
                                                 <connections>
-                                                    <action selector="tickedWithSender:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="PjW-bT-eZ1"/>
+                                                    <action selector="tickWithSender:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Vvq-O5-WtT"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yif-6s-fHw" userLabel="line1">
@@ -396,7 +390,10 @@
                                         </connections>
                                     </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MY8-mh-eAn">
-                                        <rect key="frame" x="170" y="408" width="74.333333333333314" height="36"/>
+                                        <rect key="frame" x="107" y="408" width="200" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="YCF-DH-HIH"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

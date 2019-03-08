@@ -21,18 +21,6 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var winnerLabel: UILabel!
     
-    @IBOutlet weak var topLeft: UIButton!
-    @IBOutlet weak var topCenter: UIButton!
-    @IBOutlet weak var topRight: UIButton!
-    @IBOutlet weak var centerLeft: UIButton!
-    @IBOutlet weak var centerCenter: UIButton!
-    @IBOutlet weak var centerRight: UIButton!
-    @IBOutlet weak var bottomLeft: UIButton!
-    @IBOutlet weak var bottomCenter: UIButton!
-    @IBOutlet weak var bottomRight: UIButton!
-    
-//    var crossFlag = true // used to decide weather a X or O is written in the box
-//    var tickCount = 0
     let game = Game()
     
     override func viewDidLoad() {
@@ -104,30 +92,6 @@ class FirstViewController: UIViewController {
         }
         self.checkState()
     }
-
-//    @IBAction func ticked(sender: UIButton) {
-//        if sender.title(for: .normal) == "" {
-//            if self.crossFlag == true {
-//                sender.setTitle("X", for: .normal)
-//                self.game.setField(at: sender.tag, value: true, for: FieldState.X)
-//                crossFlag = false
-//            } else {
-//                sender.setTitle("O", for: .normal)
-//                self.game.setField(at: sender.tag, value: true, for: FieldState.O)
-//                crossFlag = true
-//            }
-//        } else {
-//            let animation = CABasicAnimation(keyPath: "position")
-//            animation.duration = 0.05
-//            animation.repeatCount = 4
-//            animation.autoreverses = true
-//            animation.fromValue = NSValue(cgPoint: CGPoint(x: sender.center.x - 7, y: sender.center.y))
-//            animation.toValue = NSValue(cgPoint: CGPoint(x: sender.center.x + 7, y: sender.center.y))
-//
-//            sender.layer.add(animation, forKey: "position")
-//        }
-//        self.checkState()
-//    }
     
     @IBAction func clearGame(_ sender: Any) {
         for button in self.tics {
@@ -139,17 +103,17 @@ class FirstViewController: UIViewController {
     
     private func checkState() {
         //First Idea: IF IF IF --> Second Idea: magic Square (maybe implemented later or for bigger games)
-        if self.game.ckeckStates() == FieldState.X {
+        if self.game.checkStates() == FieldState.X {
             // Cross Wins!
             self.winnerLabel.text = " Cross Wins! "
             self.winnerLabel.isHidden = false
             print("Cross Wins")
-        } else if self.game.ckeckStates() == FieldState.O {
+        } else if self.game.checkStates() == FieldState.O {
             // Circle Wins!
             self.winnerLabel.text = " Circle Wins! "
             self.winnerLabel.isHidden = false
             print("Circle Wins")
-        } else if self.game.ckeckStates() == FieldState.T {
+        } else if self.game.checkStates() == FieldState.T {
             // Tie
             self.winnerLabel.text = " Tie "
             self.winnerLabel.isHidden = false

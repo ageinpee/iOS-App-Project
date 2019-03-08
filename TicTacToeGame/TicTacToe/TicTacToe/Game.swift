@@ -16,7 +16,7 @@ class Game {
     private var tickCount = 0
     
     
-    func ckeckStates() -> FieldState {
+    func checkStates() -> FieldState {
         if self.crossBoard.checkState() {return FieldState.X}
         else if self.circleBoard.checkState() {return FieldState.O}
         else if self.tickCount == 9 {return FieldState.T}
