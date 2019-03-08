@@ -37,4 +37,8 @@ struct GameBoard {
     func getState(at index: Int) -> Bool? {
         return state[index]
     }
+    
+    func getAllTicks() -> Array<Int> {
+        return self.state.indices.filter {self.state[$0] == true}
+    }
 }

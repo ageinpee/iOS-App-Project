@@ -22,8 +22,10 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var winnerLabel: UILabel!
     
     let game = Game()
+    let bot = Bot(for: Game())
     
     override func viewDidLoad() {
+        self.bot.set(game: self.game)
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.autolayoutButtons()
@@ -80,6 +82,16 @@ class SecondViewController: UIViewController {
         if self.game.getState(at: sender.tag, for: Player.X) == FieldState.E && self.game.getState(at: sender.tag, for: Player.O) == FieldState.E {
             let resultingPlayer = self.game.setField(at: sender.tag, value: true)
             sender.setTitle(resultingPlayer.rawValue, for: .normal)
+            //search for tag and update
+            bot.updateStates()
+            let botsChoice = bot.makeRandomChoice()
+            print(botsChoice)
+            for button in self.tics {
+                if button.tag == botsChoice {
+                    print(botsChoice)
+                    button.setTitle("O", for: .normal)
+                }
+            }
         } else {
             let animation = CABasicAnimation(keyPath: "position")
             animation.duration = 0.05
