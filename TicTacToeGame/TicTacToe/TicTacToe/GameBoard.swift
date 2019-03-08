@@ -33,4 +33,8 @@ struct GameBoard {
                       false, false, false,
                       false, false, false]
     }
+    
+    func getState(at index: Int) -> Bool? {
+        return state[index]
+    }
 }

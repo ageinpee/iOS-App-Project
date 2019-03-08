@@ -8,8 +8,14 @@
 
 import Foundation
 
-enum FieldState {
+enum FieldState: String {
     case X
     case O
     case E
+    case T
+}
+
+enum Player {
+    case X
+    case O
 }

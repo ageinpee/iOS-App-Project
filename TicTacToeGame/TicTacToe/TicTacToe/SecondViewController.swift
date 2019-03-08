@@ -82,11 +82,11 @@ class SecondViewController: UIViewController {
         if sender.title(for: .normal) == "" {
             if self.crossFlag == true {
                 sender.setTitle("X", for: .normal)
-                self.game.setField(at: sender.tag, value: true, for: FieldState.X)
+                self.game.setField(at: sender.tag, value: true, for: Player.X)
                 crossFlag = false
             } else {
                 sender.setTitle("O", for: .normal)
-                self.game.setField(at: sender.tag, value: true, for: FieldState.O)
+                self.game.setField(at: sender.tag, value: true, for: Player.O)
                 crossFlag = true
             }
         } else {

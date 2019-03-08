@@ -29,7 +29,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="top-left"/>
                                                 <connections>
-                                                    <action selector="tickedWithSender:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Ard-vi-Rm8"/>
+                                                    <action selector="tickWithSender:" destination="9pv-A4-QxB" eventType="touchUpInside" id="pew-Xu-tZA"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahK-2t-2CD" userLabel="top-center">
@@ -37,7 +37,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="top-center"/>
                                                 <connections>
-                                                    <action selector="tickedWithSender:" destination="9pv-A4-QxB" eventType="touchUpInside" id="iyf-Ee-xP5"/>
+                                                    <action selector="tickWithSender:" destination="9pv-A4-QxB" eventType="touchUpInside" id="0YF-Se-Rlg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfu-ES-CHr" userLabel="top-right">
@@ -45,7 +45,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="top-right"/>
                                                 <connections>
-                                                    <action selector="tickedWithSender:" destination="9pv-A4-QxB" eventType="touchUpInside" id="BYB-s3-1CA"/>
+                                                    <action selector="tickWithSender:" destination="9pv-A4-QxB" eventType="touchUpInside" id="DwG-O6-Nou"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSW-9A-XKd" userLabel="center-left">
@@ -53,7 +53,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="center-left"/>
                                                 <connections>
-                                                    <action selector="tickedWithSender:" destination="9pv-A4-QxB" eventType="touchUpInside" id="a6E-Vk-MG5"/>
+                                                    <action selector="tickWithSender:" destination="9pv-A4-QxB" eventType="touchUpInside" id="6JJ-1v-mRe"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztb-WV-CI1" userLabel="center-center">
@@ -61,7 +61,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="center-center"/>
                                                 <connections>
-                                                    <action selector="tickedWithSender:" destination="9pv-A4-QxB" eventType="touchUpInside" id="q6r-E7-IY7"/>
+                                                    <action selector="tickWithSender:" destination="9pv-A4-QxB" eventType="touchUpInside" id="8BU-SS-6xe"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVx-vO-60K" userLabel="center-right">
@@ -69,7 +69,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="center-right"/>
                                                 <connections>
-                                                    <action selector="tickedWithSender:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Fuo-yr-VLc"/>
+                                                    <action selector="tickWithSender:" destination="9pv-A4-QxB" eventType="touchUpInside" id="CZk-bW-f2x"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3o-VH-vzN" userLabel="bottom-left">
@@ -77,7 +77,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="bottom-left"/>
                                                 <connections>
-                                                    <action selector="tickedWithSender:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Mil-Lb-JjQ"/>
+                                                    <action selector="tickWithSender:" destination="9pv-A4-QxB" eventType="touchUpInside" id="f44-MW-Z4Q"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8V-VT-bmW" userLabel="bottom-center">
@@ -85,7 +85,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="bottom-center"/>
                                                 <connections>
-                                                    <action selector="tickedWithSender:" destination="9pv-A4-QxB" eventType="touchUpInside" id="8J8-qz-y28"/>
+                                                    <action selector="tickWithSender:" destination="9pv-A4-QxB" eventType="touchUpInside" id="qCC-ER-gxL"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2DE-7j-GM4" userLabel="bottom-right">
@@ -93,7 +93,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="bottom-right"/>
                                                 <connections>
-                                                    <action selector="tickedWithSender:" destination="9pv-A4-QxB" eventType="touchUpInside" id="oVR-Sz-G4H"/>
+                                                    <action selector="tickWithSender:" destination="9pv-A4-QxB" eventType="touchUpInside" id="6dM-3T-m3X"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpF-n1-Obs" userLabel="line1">
