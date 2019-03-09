@@ -84,12 +84,13 @@ class SecondViewController: UIViewController {
             sender.setTitle(resultingPlayer.rawValue, for: .normal)
             //search for tag and update
             bot.updateStates()
-            let botsChoice = bot.makeRandomChoice()
-            print(botsChoice)
-            for button in self.tics {
-                if button.tag == botsChoice {
-                    print(botsChoice)
-                    button.setTitle("O", for: .normal)
+            let botsChoice = bot.makeRandomChoice()!
+            if botsChoice != 9 {
+                for button in self.tics {
+                    if button.tag == botsChoice {
+                        print(botsChoice)
+                        button.setTitle("O", for: .normal)
+                    }
                 }
             }
         } else {
