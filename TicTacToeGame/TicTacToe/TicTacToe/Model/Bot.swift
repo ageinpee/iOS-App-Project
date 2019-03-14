@@ -61,8 +61,6 @@ class Bot {
         for index in toRemove {
             indices = indices.filter { $0 != index }
         }
-        print(indices)
         return indices.randomElement() ?? nil
     }
 }
-

@@ -19,9 +19,22 @@ class FirstViewController: UIViewController {
     @IBOutlet var lines: [UIView]!
     
     @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var clearScoreButton: UIButton!
     @IBOutlet weak var winnerLabel: UILabel!
     
+    @IBOutlet weak var player1Label: UILabel!
+    @IBOutlet weak var player1Score: UILabel!
+    @IBOutlet weak var player2Label: UILabel!
+    @IBOutlet weak var player2Score: UILabel!
+    
     let game = Game()
+    
+    private var player1Text = "Player 1:"
+    private var player1ScoreValue = 0
+    private var player2Text = "Player 2:"
+    private var player2ScoreValue = 0
+    
+    private var gameCounter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +43,10 @@ class FirstViewController: UIViewController {
         self.styleButtons()
         self.styleLines()
         self.styleWinnerLabel()
+        self.stylePlayerLabels()
     }
-
+    
+    //MARK - Setup and Layout
     func autolayoutButtons() {
         let offset = self.gameView.frame.size.height / 3
         let size = offset - 20
@@ -48,6 +63,20 @@ class FirstViewController: UIViewController {
         }
     }
     
+    func stylePlayerLabels() {
+        self.player1Label.text = player1Text
+        self.player1Label.font = UIFont.boldSystemFont(ofSize: 30)
+        self.player1Score.text = String(player1ScoreValue)
+        self.player1Score.font = UIFont.boldSystemFont(ofSize: 30)
+        
+        self.player2Label.text = player2Text
+        self.player2Label.font = UIFont.boldSystemFont(ofSize: 30)
+        self.player2Score.text = String(player2ScoreValue)
+        self.player2Score.font = UIFont.boldSystemFont(ofSize: 30)
+        self.player2Label.transform = CGAffineTransform(rotationAngle: .pi)
+        self.player2Score.transform = CGAffineTransform(rotationAngle: .pi)
+    }
+    
     func styleButtons() {
         for button in self.tics {
             button.backgroundColor = .white
@@ -59,6 +88,10 @@ class FirstViewController: UIViewController {
         self.clearButton.layer.cornerRadius = 10
         self.clearButton.layer.borderWidth = 0.5
         self.clearButton.layer.borderColor = UIColor.black.cgColor
+        
+        self.clearScoreButton.layer.cornerRadius = 10
+        self.clearScoreButton.layer.borderWidth = 0.5
+        self.clearScoreButton.layer.borderColor = UIColor.black.cgColor
     }
     
     func styleLines() {
@@ -76,6 +109,7 @@ class FirstViewController: UIViewController {
         self.winnerLabel.layer.borderWidth = 0.5
     }
     
+    //MARK - IBActions
     @IBAction func tick(sender: UIButton) {
         if self.game.getState(at: sender.tag, for: Player.X) == FieldState.E && self.game.getState(at: sender.tag, for: Player.O) == FieldState.E {
             let resultingPlayer = self.game.setField(at: sender.tag, value: true)
@@ -99,24 +133,58 @@ class FirstViewController: UIViewController {
         }
         self.winnerLabel.isHidden = true
         self.game.clear()
+        self.switchLabels()
     }
     
+    @IBAction func clearScores(_ sender: Any) {
+        self.player1ScoreValue = 0
+        self.player2ScoreValue = 0
+        self.gameCounter = 0
+        self.updateScoreLabels()
+    }
+    
+    //MARK - Helping Functions
     private func checkState() {
         //First Idea: IF IF IF --> Second Idea: magic Square (maybe implemented later or for bigger games)
         if self.game.checkStates() == FieldState.X {
             // Cross Wins!
             self.winnerLabel.text = " Cross Wins! "
             self.winnerLabel.isHidden = false
-            print("Cross Wins")
+            self.player1ScoreValue += 1
+            self.gameCounter += 1
+            self.updateScoreLabels()
         } else if self.game.checkStates() == FieldState.O {
             // Circle Wins!
             self.winnerLabel.text = " Circle Wins! "
             self.winnerLabel.isHidden = false
-            print("Circle Wins")
+            self.player2ScoreValue += 1
+            self.gameCounter += 1
+            self.updateScoreLabels()
         } else if self.game.checkStates() == FieldState.T {
             // Tie
             self.winnerLabel.text = " Tie "
             self.winnerLabel.isHidden = false
+        }
+    }
+    
+    private func updateScoreLabels() {
+        self.player1Label.text = player1Text
+        self.player1Score.text = String(player1ScoreValue)
+        self.player2Label.text = player2Text
+        self.player2Score.text = String(player2ScoreValue)
+    }
+    
+    private func switchLabels() {
+        if self.gameCounter % 2 == 0 {
+            self.player1Label.text = player1Text
+            self.player1Score.text = String(player1ScoreValue)
+            self.player2Label.text = player2Text
+            self.player2Score.text = String(player2ScoreValue)
+        } else if self.gameCounter % 2 == 1 {
+            self.player1Label.text = player2Text
+            self.player1Score.text = String(player2ScoreValue)
+            self.player2Label.text = player1Text
+            self.player2Score.text = String(player1ScoreValue)
         }
     }
 }

@@ -84,12 +84,13 @@ class SecondViewController: UIViewController {
             sender.setTitle(resultingPlayer.rawValue, for: .normal)
             //search for tag and update
             bot.updateStates()
-            let botsChoice = bot.makeRandomChoice()!
-            if botsChoice != 9 {
-                for button in self.tics {
-                    if button.tag == botsChoice {
-                        print(botsChoice)
-                        button.setTitle("O", for: .normal)
+            if self.game.checkStates() == FieldState.E {
+                let botsChoice = bot.makeRandomChoice()!
+                if botsChoice != 9 {
+                    for button in self.tics {
+                        if button.tag == botsChoice {
+                            button.setTitle("O", for: .normal)
+                        }
                     }
                 }
             }
@@ -120,12 +121,10 @@ class SecondViewController: UIViewController {
             // Cross Wins!
             self.winnerLabel.text = " Cross Wins! "
             self.winnerLabel.isHidden = false
-            print("Cross Wins")
         } else if self.game.checkStates() == FieldState.O {
             // Circle Wins!
             self.winnerLabel.text = " Circle Wins! "
             self.winnerLabel.isHidden = false
-            print("Circle Wins")
         } else if self.game.checkStates() == FieldState.T {
             // Tie
             self.winnerLabel.text = " Tie "
