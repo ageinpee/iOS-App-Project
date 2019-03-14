@@ -175,7 +175,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QP1-tp-OiW" userLabel="Clear Score Button">
                                         <rect key="frame" x="157" y="639.66666666666663" width="100" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="fxB-4b-arP"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="fxB-4b-arP"/>
                                             <constraint firstAttribute="height" constant="35" id="meX-Pe-mEv"/>
                                         </constraints>
                                         <state key="normal" title="Clear Score"/>
@@ -189,6 +189,16 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="XYO-uC-GyH"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn your Phone around!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFF-Ji-8nh" userLabel="Turn Phone Label">
+                                        <rect key="frame" x="137" y="314.66666666666669" width="140" height="140"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="140" id="0Bh-le-pK7"/>
+                                            <constraint firstAttribute="width" constant="140" id="j5w-Pv-7Sn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -211,7 +221,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXU-GA-ijp" userLabel="Player2">
-                                        <rect key="frame" x="120" y="20" width="274" height="50"/>
+                                        <rect key="frame" x="120" y="20" width="57" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="yKY-E9-eYU"/>
                                         </constraints>
@@ -242,13 +252,15 @@
                                     <constraint firstItem="QP1-tp-OiW" firstAttribute="top" secondItem="ouI-xq-dT6" secondAttribute="bottom" constant="20" id="QfF-ZA-AWd"/>
                                     <constraint firstItem="6pv-Th-f7n" firstAttribute="leading" secondItem="Dae-Kf-BCa" secondAttribute="leading" constant="20" id="S6Z-pb-jYs"/>
                                     <constraint firstItem="6r5-DQ-Bae" firstAttribute="centerX" secondItem="Dae-Kf-BCa" secondAttribute="centerX" id="VRs-cK-0XF"/>
+                                    <constraint firstItem="nFF-Ji-8nh" firstAttribute="centerX" secondItem="Dae-Kf-BCa" secondAttribute="centerX" id="XNg-Vb-VRa"/>
                                     <constraint firstItem="mXU-GA-ijp" firstAttribute="leading" secondItem="B7T-fF-QVH" secondAttribute="trailing" constant="20" id="hiI-Dd-qnR"/>
                                     <constraint firstItem="Fcl-34-I5m" firstAttribute="centerX" secondItem="Dae-Kf-BCa" secondAttribute="centerX" id="lWs-7l-lTP"/>
                                     <constraint firstItem="c11-D9-BBY" firstAttribute="leading" secondItem="6pv-Th-f7n" secondAttribute="trailing" constant="20" id="m0X-eO-FGO"/>
                                     <constraint firstItem="ouI-xq-dT6" firstAttribute="centerX" secondItem="Dae-Kf-BCa" secondAttribute="centerX" id="nSE-xT-Qq0"/>
+                                    <constraint firstItem="nFF-Ji-8nh" firstAttribute="centerY" secondItem="Dae-Kf-BCa" secondAttribute="centerY" id="nla-mH-0H4"/>
                                     <constraint firstItem="Fcl-34-I5m" firstAttribute="centerY" secondItem="Dae-Kf-BCa" secondAttribute="centerY" id="pIA-Ve-MLi"/>
                                     <constraint firstItem="mXU-GA-ijp" firstAttribute="leading" secondItem="Dae-Kf-BCa" secondAttribute="leading" constant="120" id="pie-Hc-3ie"/>
-                                    <constraint firstAttribute="trailing" secondItem="mXU-GA-ijp" secondAttribute="trailing" constant="20" id="rEC-lH-tAT"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mXU-GA-ijp" secondAttribute="trailing" symbolic="YES" id="rEC-lH-tAT"/>
                                     <constraint firstAttribute="trailing" secondItem="6pv-Th-f7n" secondAttribute="trailing" constant="120" id="siQ-OK-5EK"/>
                                     <constraint firstAttribute="bottom" secondItem="c11-D9-BBY" secondAttribute="bottom" constant="20" id="tOl-Bo-jwF"/>
                                 </constraints>
@@ -273,6 +285,7 @@
                         <outlet property="player1Score" destination="c11-D9-BBY" id="CSL-E6-aCJ"/>
                         <outlet property="player2Label" destination="mXU-GA-ijp" id="Fse-vH-dgU"/>
                         <outlet property="player2Score" destination="B7T-fF-QVH" id="Vet-qL-tuR"/>
+                        <outlet property="turnPhoneLabel" destination="nFF-Ji-8nh" id="1xf-Vb-hkd"/>
                         <outlet property="winnerLabel" destination="6r5-DQ-Bae" id="4oA-uo-noB"/>
                         <outletCollection property="tics" destination="WFC-nK-FKv" collectionClass="NSMutableArray" id="nln-DO-aEf"/>
                         <outletCollection property="tics" destination="ahK-2t-2CD" collectionClass="NSMutableArray" id="MPm-23-pT0"/>
@@ -458,7 +471,7 @@
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MY8-mh-eAn">
                                         <rect key="frame" x="107" y="408" width="200" height="36"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="YCF-DH-HIH"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="YCF-DH-HIH"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                         <nil key="textColor"/>

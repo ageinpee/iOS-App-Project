@@ -27,6 +27,8 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var player2Label: UILabel!
     @IBOutlet weak var player2Score: UILabel!
     
+    @IBOutlet weak var turnPhoneLabel: UILabel!
+    
     let game = Game()
     
     private var player1Text = "Player 1:"
@@ -44,6 +46,7 @@ class FirstViewController: UIViewController {
         self.styleLines()
         self.styleWinnerLabel()
         self.stylePlayerLabels()
+        self.styleTurnPhoneLabel()
     }
     
     //MARK - Setup and Layout
@@ -61,6 +64,14 @@ class FirstViewController: UIViewController {
                 ])
             tagCounter += 1
         }
+    }
+    
+    func styleTurnPhoneLabel() {
+        self.turnPhoneLabel.layer.backgroundColor = UIColor.black.withAlphaComponent(0.2).cgColor
+        self.turnPhoneLabel.layer.cornerRadius = 10
+        self.turnPhoneLabel.layer.borderColor = UIColor.black.cgColor
+        self.turnPhoneLabel.layer.borderWidth = 0.5
+        self.turnPhoneLabel.isHidden = true
     }
     
     func stylePlayerLabels() {
@@ -132,8 +143,12 @@ class FirstViewController: UIViewController {
             button.setTitle("", for: .normal)
         }
         self.winnerLabel.isHidden = true
+        if self.game.checkStates() != FieldState.E {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.switchLabels()
+            }
+        }
         self.game.clear()
-        self.switchLabels()
     }
     
     @IBAction func clearScores(_ sender: Any) {
@@ -175,6 +190,11 @@ class FirstViewController: UIViewController {
     }
     
     private func switchLabels() {
+        self.turnPhoneLabel.alpha = 0
+        self.turnPhoneLabel.isHidden = false
+        UIView.animate(withDuration: 0.2, animations: { () -> Void in self.turnPhoneLabel.alpha = 1 }) { (Bool) -> Void in UIView.animate(withDuration: 0.2, delay: 1, options: .curveEaseOut, animations: { () -> Void in self.turnPhoneLabel.alpha = 0
+            }, completion: nil)
+        }
         if self.gameCounter % 2 == 0 {
             self.player1Label.text = player1Text
             self.player1Score.text = String(player1ScoreValue)
@@ -186,5 +206,9 @@ class FirstViewController: UIViewController {
             self.player2Label.text = player1Text
             self.player2Score.text = String(player1ScoreValue)
         }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+            self.turnPhoneLabel.isHidden = true
+        })
     }
 }
