@@ -477,15 +477,44 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jB-De-xLH">
+                                        <rect key="frame" x="20" y="702" width="374" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="RF9-08-kzw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bot Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFU-mV-LcZ">
+                                        <rect key="frame" x="20" y="20" width="294" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="eJO-IK-9pN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="45C-7c-7Il">
+                                        <rect key="frame" x="345" y="29.666666666666671" width="51" height="31"/>
+                                    </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="pFU-mV-LcZ" firstAttribute="leading" secondItem="a5p-h7-BrW" secondAttribute="leading" constant="20" id="1jH-c7-7gK"/>
+                                    <constraint firstAttribute="trailing" secondItem="6jB-De-xLH" secondAttribute="trailing" constant="20" id="8YX-XC-pbH"/>
                                     <constraint firstItem="jXg-Zt-nWf" firstAttribute="centerX" secondItem="a5p-h7-BrW" secondAttribute="centerX" id="FM5-Is-jez"/>
                                     <constraint firstItem="MY8-mh-eAn" firstAttribute="centerY" secondItem="a5p-h7-BrW" secondAttribute="centerY" id="Gie-VV-eeD"/>
+                                    <constraint firstItem="6jB-De-xLH" firstAttribute="leading" secondItem="a5p-h7-BrW" secondAttribute="leading" constant="20" id="HDI-CR-737"/>
+                                    <constraint firstAttribute="trailing" secondItem="pFU-mV-LcZ" secondAttribute="trailing" constant="100" id="LJI-zh-eop"/>
                                     <constraint firstItem="jXg-Zt-nWf" firstAttribute="centerY" secondItem="a5p-h7-BrW" secondAttribute="centerY" id="Ug2-4M-eb3"/>
+                                    <constraint firstItem="pFU-mV-LcZ" firstAttribute="top" secondItem="a5p-h7-BrW" secondAttribute="top" constant="20" id="XFj-Kh-T1e"/>
                                     <constraint firstItem="MY8-mh-eAn" firstAttribute="centerX" secondItem="a5p-h7-BrW" secondAttribute="centerX" id="XiN-jw-VPB"/>
                                     <constraint firstItem="OoX-sH-E3c" firstAttribute="centerX" secondItem="a5p-h7-BrW" secondAttribute="centerX" id="YtY-gc-OUU"/>
+                                    <constraint firstAttribute="bottom" secondItem="6jB-De-xLH" secondAttribute="bottom" constant="100" id="ZeW-a1-XUR"/>
                                     <constraint firstItem="OoX-sH-E3c" firstAttribute="top" secondItem="jXg-Zt-nWf" secondAttribute="bottom" constant="50" id="pGu-i0-svW"/>
+                                    <constraint firstItem="45C-7c-7Il" firstAttribute="centerY" secondItem="pFU-mV-LcZ" secondAttribute="centerY" id="rIs-uz-bTX"/>
+                                    <constraint firstAttribute="trailing" secondItem="45C-7c-7Il" secondAttribute="trailing" constant="20" id="sp1-iC-zxS"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -500,8 +529,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
                     <connections>
+                        <outlet property="botLabel" destination="pFU-mV-LcZ" id="M8u-lj-YID"/>
+                        <outlet property="botModeSwitch" destination="45C-7c-7Il" id="vTZ-fy-WQE"/>
                         <outlet property="clearButton" destination="OoX-sH-E3c" id="Uke-AH-6rN"/>
                         <outlet property="gameView" destination="jXg-Zt-nWf" id="DfG-JS-KHD"/>
+                        <outlet property="playerLabel" destination="6jB-De-xLH" id="siz-bJ-g8d"/>
                         <outlet property="winnerLabel" destination="MY8-mh-eAn" id="RyU-EV-xQa"/>
                         <outletCollection property="tics" destination="pQ7-v8-D1t" collectionClass="NSMutableArray" id="lON-N2-6ud"/>
                         <outletCollection property="tics" destination="mNA-BT-dIy" collectionClass="NSMutableArray" id="gCi-bM-s89"/>

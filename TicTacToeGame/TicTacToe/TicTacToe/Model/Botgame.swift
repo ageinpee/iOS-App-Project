@@ -41,8 +41,18 @@ class Botgame {
         return self.board.turn
     }
     
-    func moveBot() {
-        print(self.board.findBestMove(self.board))
-        self.board = self.board.move(self.board.findBestMove(self.board))
+    func moveBot(with mode: Bool) {
+        if mode {
+            self.board = self.board.move(self.board.findBestMove(self.board))
+        } else {
+            let randomInt = Int.random(in: 0...99)
+            if randomInt < 30 {
+                self.board = self.board.move(self.board.findBestMove(self.board))
+            } else {
+                if self.board.legalMoves.count != 0 {
+                    self.board = self.board.move(self.board.legalMoves.randomElement()!)
+                }
+            }
+        }
     }
 }

@@ -20,8 +20,14 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var winnerLabel: UILabel!
+    @IBOutlet weak var botLabel: UILabel!
+    @IBOutlet weak var playerLabel: UILabel!
+    
+    @IBOutlet weak var botModeSwitch: UISwitch!
     
     let game = Botgame()
+    private var playerScore = 0
+    private var botScore = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +36,7 @@ class SecondViewController: UIViewController {
         self.styleButtons()
         self.styleLines()
         self.styleWinnerLabel()
+        self.stylePlayerLabels()
     }
 
     func autolayoutButtons() {
@@ -76,11 +83,16 @@ class SecondViewController: UIViewController {
         self.winnerLabel.layer.borderWidth = 0.5
     }
     
+    func stylePlayerLabels() {
+        self.playerLabel.text = "Players Score: 0"
+        self.botLabel.text = "Bots Score: 0"
+    }
+    
     @IBAction func tick(sender: UIButton) {
         if self.game.getState(at: sender.tag) == Piece.E && !self.game.isWin && !self.game.isDraw {
             self.game.move(location: sender.tag)
             if !self.game.isWin || !self.game.isDraw {
-                self.game.moveBot()
+                self.game.moveBot(with: self.botModeSwitch.isOn)
             }
         } else {
             let animation = CABasicAnimation(keyPath: "position")
@@ -109,9 +121,17 @@ class SecondViewController: UIViewController {
         }
         
         if self.game.isWin {
-            // Cross Wins!
-            self.winnerLabel.text = " Someone Won! "
-            self.winnerLabel.isHidden = false
+            if self.game.getBoard().whoWon == .X {
+                self.winnerLabel.text = " You Won! "
+                self.winnerLabel.isHidden = false
+                self.playerScore += 1
+                self.playerLabel.text = "Players Score: \(playerScore)"
+            } else if self.game.getBoard().whoWon == .O {
+                self.winnerLabel.text = " The Bot Won! "
+                self.winnerLabel.isHidden = false
+                self.botScore += 1
+                self.botLabel.text = "Bots Score: \(botScore)"
+            }
         } else if self.game.isDraw {
             // Tie
             self.winnerLabel.text = " Tie "

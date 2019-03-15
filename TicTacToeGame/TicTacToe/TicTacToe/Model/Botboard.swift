@@ -45,6 +45,30 @@ struct Botboard {
                 position[2] == position[4] && position[2] == position[6] && position[2] != .E // diag 1
     }
     
+    var whoWon: Piece {
+        if position[0] == .X && position[1] == .X && position[2] == .X ||
+            position[3] == .X && position[4] == .X && position[5] == .X ||
+            position[6] == .X && position[7] == .X && position[8] == .X ||
+            position[0] == .X && position[3] == .X && position[6] == .X ||
+            position[1] == .X && position[4] == .X && position[7] == .X ||
+            position[2] == .X && position[5] == .X && position[8] == .X ||
+            position[0] == .X && position[4] == .X && position[8] == .X ||
+            position[2] == .X && position[4] == .X && position[6] == .X {
+            return .X
+        } else if position[0] == .O && position[1] == .O && position[2] == .O ||
+            position[3] == .O && position[4] == .O && position[5] == .O ||
+            position[6] == .O && position[7] == .O && position[8] == .O ||
+            position[0] == .O && position[3] == .O && position[6] == .O ||
+            position[1] == .O && position[4] == .O && position[7] == .O ||
+            position[2] == .O && position[5] == .O && position[8] == .O ||
+            position[0] == .O && position[4] == .O && position[8] == .O ||
+            position[2] == .O && position[4] == .O && position[6] == .O {
+            return .O
+        } else {
+            return .E
+        }
+    }
+    
     var isDraw: Bool {
         return !isWin && legalMoves.count == 0
     }
