@@ -21,11 +21,9 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var winnerLabel: UILabel!
     
-    let game = Game()
-    let bot = Bot(for: Game())
+    let game = Botgame()
     
     override func viewDidLoad() {
-        self.bot.set(game: self.game)
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.autolayoutButtons()
@@ -79,20 +77,10 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func tick(sender: UIButton) {
-        if self.game.getState(at: sender.tag, for: Player.X) == FieldState.E && self.game.getState(at: sender.tag, for: Player.O) == FieldState.E {
-            let resultingPlayer = self.game.setField(at: sender.tag, value: true)
-            sender.setTitle(resultingPlayer.rawValue, for: .normal)
-            //search for tag and update
-            bot.updateStates()
-            if self.game.checkStates() == FieldState.E {
-                let botsChoice = bot.makeRandomChoice()!
-                if botsChoice != 9 {
-                    for button in self.tics {
-                        if button.tag == botsChoice {
-                            button.setTitle("O", for: .normal)
-                        }
-                    }
-                }
+        if self.game.getState(at: sender.tag) == Piece.E && !self.game.isWin && !self.game.isDraw {
+            self.game.move(location: sender.tag)
+            if !self.game.isWin || !self.game.isDraw {
+                self.game.moveBot()
             }
         } else {
             let animation = CABasicAnimation(keyPath: "position")
@@ -104,28 +92,27 @@ class SecondViewController: UIViewController {
             
             sender.layer.add(animation, forKey: "position")
         }
-        self.checkState()
+        self.updateUI()
     }
     
     @IBAction func clearGame(_ sender: Any) {
         for button in self.tics {
-            button.setTitle("", for: .normal)
+            button.setTitle(" ", for: .normal)
         }
         self.winnerLabel.isHidden = true
         self.game.clear()
     }
     
-    private func checkState() {
-        //First Idea: IF IF IF --> Second Idea: magic Square (maybe implemented later or for bigger games)
-        if self.game.checkStates() == FieldState.X {
+    private func updateUI() {
+        for button in self.tics {
+            button.setTitle(self.game.getPositions()[button.tag].rawValue, for: .normal)
+        }
+        
+        if self.game.isWin {
             // Cross Wins!
-            self.winnerLabel.text = " Cross Wins! "
+            self.winnerLabel.text = " Someone Won! "
             self.winnerLabel.isHidden = false
-        } else if self.game.checkStates() == FieldState.O {
-            // Circle Wins!
-            self.winnerLabel.text = " Circle Wins! "
-            self.winnerLabel.isHidden = false
-        } else if self.game.checkStates() == FieldState.T {
+        } else if self.game.isDraw {
             // Tie
             self.winnerLabel.text = " Tie "
             self.winnerLabel.isHidden = false

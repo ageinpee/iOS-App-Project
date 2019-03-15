@@ -19,3 +19,20 @@ enum Player {
     case X
     case O
 }
+
+enum Piece: String {
+    case X = "X"
+    case O = "O"
+    case E = " "
+    var opposite: Piece {
+        switch self {
+        case .X:
+            return .O
+        case .O:
+            return .X
+        case .E:
+            return .E
+        }
+    }
+    
+}
