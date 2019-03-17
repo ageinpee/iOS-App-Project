@@ -41,12 +41,12 @@ class Botgame {
         return self.board.turn
     }
     
-    func moveBot(with mode: Bool) {
-        if mode {
+    func moveBot(with value: Float) {
+        if value == 1.0 {
             self.board = self.board.move(self.board.findBestMove(self.board))
         } else {
-            let randomInt = Int.random(in: 0...99)
-            if randomInt < 30 {
+            let randomFloat = Float.random(in: 0.0...1.0)
+            if randomFloat < value {
                 self.board = self.board.move(self.board.findBestMove(self.board))
             } else {
                 if self.board.legalMoves.count != 0 {

@@ -458,7 +458,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OoX-sH-E3c">
-                                        <rect key="frame" x="157" y="626" width="100" height="35"/>
+                                        <rect key="frame" x="157" y="596" width="100" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="2cS-se-7Yi"/>
                                             <constraint firstAttribute="height" constant="35" id="4RM-La-Sxy"/>
@@ -466,6 +466,17 @@
                                         <state key="normal" title="Clear"/>
                                         <connections>
                                             <action selector="clearGame:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="WW1-9e-cJi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8M-7J-sss" userLabel="Clear Score Button">
+                                        <rect key="frame" x="157" y="651" width="100" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="BRz-Gp-Zgb"/>
+                                            <constraint firstAttribute="width" constant="100" id="U93-Tx-JZz"/>
+                                        </constraints>
+                                        <state key="normal" title="Clear Score"/>
+                                        <connections>
+                                            <action selector="clearScore:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="prK-ag-vge"/>
                                         </connections>
                                     </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MY8-mh-eAn">
@@ -495,26 +506,43 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="45C-7c-7Il">
-                                        <rect key="frame" x="345" y="29.666666666666671" width="51" height="31"/>
-                                    </switch>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="PVa-D1-tYZ" userLabel="difficultySlider">
+                                        <rect key="frame" x="48" y="90" width="318" height="31"/>
+                                        <connections>
+                                            <action selector="sliderMoved:" destination="8rJ-Kc-sve" eventType="valueChanged" id="kMC-EH-Eeo"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxd-Ml-lca" userLabel="difficultyLabel">
+                                        <rect key="frame" x="50" y="140" width="314" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="pFU-mV-LcZ" firstAttribute="leading" secondItem="a5p-h7-BrW" secondAttribute="leading" constant="20" id="1jH-c7-7gK"/>
+                                    <constraint firstItem="Hxd-Ml-lca" firstAttribute="leading" secondItem="a5p-h7-BrW" secondAttribute="leading" constant="50" id="6MX-Qh-7lW"/>
                                     <constraint firstAttribute="trailing" secondItem="6jB-De-xLH" secondAttribute="trailing" constant="20" id="8YX-XC-pbH"/>
+                                    <constraint firstItem="PVa-D1-tYZ" firstAttribute="leading" secondItem="a5p-h7-BrW" secondAttribute="leading" constant="50" id="91I-Mo-faP"/>
+                                    <constraint firstItem="Hxd-Ml-lca" firstAttribute="centerX" secondItem="a5p-h7-BrW" secondAttribute="centerX" id="AmV-nu-RId"/>
                                     <constraint firstItem="jXg-Zt-nWf" firstAttribute="centerX" secondItem="a5p-h7-BrW" secondAttribute="centerX" id="FM5-Is-jez"/>
+                                    <constraint firstAttribute="trailing" secondItem="PVa-D1-tYZ" secondAttribute="trailing" constant="50" id="GC3-Ly-Zis"/>
                                     <constraint firstItem="MY8-mh-eAn" firstAttribute="centerY" secondItem="a5p-h7-BrW" secondAttribute="centerY" id="Gie-VV-eeD"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hxd-Ml-lca" secondAttribute="trailing" constant="50" id="HB5-kP-2MZ"/>
                                     <constraint firstItem="6jB-De-xLH" firstAttribute="leading" secondItem="a5p-h7-BrW" secondAttribute="leading" constant="20" id="HDI-CR-737"/>
+                                    <constraint firstItem="PVa-D1-tYZ" firstAttribute="centerX" secondItem="a5p-h7-BrW" secondAttribute="centerX" id="Ju1-Ug-fRj"/>
+                                    <constraint firstItem="P8M-7J-sss" firstAttribute="top" secondItem="OoX-sH-E3c" secondAttribute="bottom" constant="20" id="Kef-q3-xl8"/>
                                     <constraint firstAttribute="trailing" secondItem="pFU-mV-LcZ" secondAttribute="trailing" constant="100" id="LJI-zh-eop"/>
                                     <constraint firstItem="jXg-Zt-nWf" firstAttribute="centerY" secondItem="a5p-h7-BrW" secondAttribute="centerY" id="Ug2-4M-eb3"/>
+                                    <constraint firstItem="PVa-D1-tYZ" firstAttribute="top" secondItem="pFU-mV-LcZ" secondAttribute="bottom" constant="20" id="Woq-VK-iAD"/>
                                     <constraint firstItem="pFU-mV-LcZ" firstAttribute="top" secondItem="a5p-h7-BrW" secondAttribute="top" constant="20" id="XFj-Kh-T1e"/>
                                     <constraint firstItem="MY8-mh-eAn" firstAttribute="centerX" secondItem="a5p-h7-BrW" secondAttribute="centerX" id="XiN-jw-VPB"/>
                                     <constraint firstItem="OoX-sH-E3c" firstAttribute="centerX" secondItem="a5p-h7-BrW" secondAttribute="centerX" id="YtY-gc-OUU"/>
                                     <constraint firstAttribute="bottom" secondItem="6jB-De-xLH" secondAttribute="bottom" constant="100" id="ZeW-a1-XUR"/>
-                                    <constraint firstItem="OoX-sH-E3c" firstAttribute="top" secondItem="jXg-Zt-nWf" secondAttribute="bottom" constant="50" id="pGu-i0-svW"/>
-                                    <constraint firstItem="45C-7c-7Il" firstAttribute="centerY" secondItem="pFU-mV-LcZ" secondAttribute="centerY" id="rIs-uz-bTX"/>
-                                    <constraint firstAttribute="trailing" secondItem="45C-7c-7Il" secondAttribute="trailing" constant="20" id="sp1-iC-zxS"/>
+                                    <constraint firstItem="Hxd-Ml-lca" firstAttribute="top" secondItem="PVa-D1-tYZ" secondAttribute="bottom" constant="20" id="fKv-k9-JBt"/>
+                                    <constraint firstItem="P8M-7J-sss" firstAttribute="centerX" secondItem="a5p-h7-BrW" secondAttribute="centerX" id="mu1-v8-4he"/>
+                                    <constraint firstItem="OoX-sH-E3c" firstAttribute="top" secondItem="jXg-Zt-nWf" secondAttribute="bottom" constant="20" id="pGu-i0-svW"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -530,8 +558,10 @@
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="botLabel" destination="pFU-mV-LcZ" id="M8u-lj-YID"/>
-                        <outlet property="botModeSwitch" destination="45C-7c-7Il" id="vTZ-fy-WQE"/>
                         <outlet property="clearButton" destination="OoX-sH-E3c" id="Uke-AH-6rN"/>
+                        <outlet property="clearScoreButton" destination="P8M-7J-sss" id="mLt-GN-VPb"/>
+                        <outlet property="difficultyLabel" destination="Hxd-Ml-lca" id="gLE-Da-wyJ"/>
+                        <outlet property="difficultySlider" destination="PVa-D1-tYZ" id="LYO-xj-W2c"/>
                         <outlet property="gameView" destination="jXg-Zt-nWf" id="DfG-JS-KHD"/>
                         <outlet property="playerLabel" destination="6jB-De-xLH" id="siz-bJ-g8d"/>
                         <outlet property="winnerLabel" destination="MY8-mh-eAn" id="RyU-EV-xQa"/>

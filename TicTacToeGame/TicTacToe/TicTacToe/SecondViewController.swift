@@ -19,11 +19,13 @@ class SecondViewController: UIViewController {
     @IBOutlet var lines: [UIView]!
     
     @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var clearScoreButton: UIButton!
     @IBOutlet weak var winnerLabel: UILabel!
     @IBOutlet weak var botLabel: UILabel!
     @IBOutlet weak var playerLabel: UILabel!
     
-    @IBOutlet weak var botModeSwitch: UISwitch!
+    @IBOutlet weak var difficultySlider: UISlider!
+    @IBOutlet weak var difficultyLabel: UILabel!
     
     let game = Botgame()
     private var playerScore = 0
@@ -37,6 +39,7 @@ class SecondViewController: UIViewController {
         self.styleLines()
         self.styleWinnerLabel()
         self.stylePlayerLabels()
+        self.setDifficultyLabel()
     }
 
     func autolayoutButtons() {
@@ -66,6 +69,10 @@ class SecondViewController: UIViewController {
         self.clearButton.layer.cornerRadius = 10
         self.clearButton.layer.borderWidth = 0.5
         self.clearButton.layer.borderColor = UIColor.black.cgColor
+        
+        self.clearScoreButton.layer.cornerRadius = 10
+        self.clearScoreButton.layer.borderWidth = 0.5
+        self.clearScoreButton.layer.borderColor = UIColor.black.cgColor
     }
     
     func styleLines() {
@@ -88,11 +95,23 @@ class SecondViewController: UIViewController {
         self.botLabel.text = "Bots Score: 0"
     }
     
+    func setDifficultyLabel() {
+        if self.difficultySlider.value < 0.3 {
+            self.difficultyLabel.text = "Easy"
+        } else if self.difficultySlider.value >= 0.3 && self.difficultySlider.value < 0.7 {
+            self.difficultyLabel.text = "Challenging"
+        } else if self.difficultySlider.value >= 0.7 && self.difficultySlider.value != 1.0 {
+            self.difficultyLabel.text = "Hard"
+        } else if self.difficultySlider.value == 1.0 {
+            self.difficultyLabel.text = "Unbeatable"
+        }
+    }
+    
     @IBAction func tick(sender: UIButton) {
         if self.game.getState(at: sender.tag) == Piece.E && !self.game.isWin && !self.game.isDraw {
             self.game.move(location: sender.tag)
             if !self.game.isWin || !self.game.isDraw {
-                self.game.moveBot(with: self.botModeSwitch.isOn)
+                self.game.moveBot(with: self.difficultySlider.value)
             }
         } else {
             let animation = CABasicAnimation(keyPath: "position")
@@ -113,6 +132,18 @@ class SecondViewController: UIViewController {
         }
         self.winnerLabel.isHidden = true
         self.game.clear()
+    }
+    
+    @IBAction func clearScore(_ sender: Any) {
+        self.clearGame(sender)
+        self.playerScore = 0
+        self.botScore = 0
+        self.playerLabel.text = "Players Score: \(playerScore)"
+        self.botLabel.text = "Bots Score: \(botScore)"
+    }
+    
+    @IBAction func sliderMoved(_ sender: Any) {
+        self.setDifficultyLabel()
     }
     
     private func updateUI() {
