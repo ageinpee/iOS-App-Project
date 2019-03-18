@@ -35,6 +35,7 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.autolayoutButtons()
+        self.autolayoutLines()
         self.styleButtons()
         self.styleLines()
         self.styleWinnerLabel()
@@ -43,25 +44,43 @@ class SecondViewController: UIViewController {
     }
 
     func autolayoutButtons() {
-        let offset = self.gameView.frame.size.height / 3
+        let offset = self.gameView.bounds.height / 3
         let size = offset - 20
         var tagCounter = 0
+        var positionOffsetX = -offset
+        var positionOffsetY = -offset
         
         for button in self.tics {
             button.tag = tagCounter
             button.translatesAutoresizingMaskIntoConstraints = false
-            button.addConstraints([
-                NSLayoutConstraint(item: button, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: size),
-                NSLayoutConstraint(item: button, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: size)
-                ])
+            button.widthAnchor.constraint(equalToConstant: size).isActive = true
+            button.heightAnchor.constraint(equalToConstant: size).isActive = true
             tagCounter += 1
+            
+            button.centerXAnchor.constraint(equalTo: self.gameView.centerXAnchor, constant: positionOffsetX).isActive = true
+            button.centerYAnchor.constraint(equalTo: self.gameView.centerYAnchor, constant: positionOffsetY).isActive = true
+            
+            if positionOffsetX < 0 { positionOffsetX = 0 }
+            else if positionOffsetX == 0 { positionOffsetX = offset }
+            else if positionOffsetX > 0 { positionOffsetX = -offset }
+            if tagCounter == 3 { positionOffsetY = 0 }
+            else if tagCounter == 6 { positionOffsetY = offset }
         }
     }
     
+    func autolayoutLines() {
+        let offset = self.gameView.frame.height / 6
+        self.lines[0].centerXAnchor.constraint(equalTo: self.gameView.centerXAnchor, constant: -offset).isActive = true
+        self.lines[1].centerXAnchor.constraint(equalTo: self.gameView.centerXAnchor, constant: offset).isActive = true
+        self.lines[2].centerYAnchor.constraint(equalTo: self.gameView.centerYAnchor, constant: -offset).isActive = true
+        self.lines[3].centerYAnchor.constraint(equalTo: self.gameView.centerYAnchor, constant: offset).isActive = true
+    }
+    
     func styleButtons() {
+        let buttonCornerRadius = ((self.gameView.frame.size.height / 3) - 20) / 2
         for button in self.tics {
             button.backgroundColor = .white
-            button.layer.cornerRadius = 40
+            button.layer.cornerRadius = buttonCornerRadius
             button.layer.borderWidth = 0.5
             button.layer.borderColor = UIColor.black.cgColor
             button.setTitle("", for: .normal)
