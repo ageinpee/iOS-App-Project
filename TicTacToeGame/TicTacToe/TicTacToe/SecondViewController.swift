@@ -129,7 +129,7 @@ class SecondViewController: UIViewController {
     @IBAction func tick(sender: UIButton) {
         if self.game.getState(at: sender.tag) == Piece.E && !self.game.isWin && !self.game.isDraw {
             self.game.move(location: sender.tag)
-            if !self.game.isWin || !self.game.isDraw {
+            if !self.game.isWin && !self.game.isDraw {
                 self.game.moveBot(with: self.difficultySlider.value)
             }
         } else {
