@@ -8,71 +8,43 @@
 
 import UIKit
 
-class First_TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class First_TableViewController: UITableViewController {
     
-    private let data = ["first", "second", "third", "fourth"]
-    @IBOutlet var tableView: UITableView!
+    private var data : [TableViewData] = [TableViewData]()
+//    @IBOutlet var tableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
+        data = createData(amount: 6)
+        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.dataSource = self
+        tableView.delegate = self
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath as IndexPath)
-        cell.textLabel!.text = "\(data[indexPath.row])"
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> CustomTableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath as IndexPath) as! CustomTableViewCell
+        let currentLastItem = data[indexPath.row]
+        cell.data = currentLastItem
         return cell
     }
-}
-
-
-class CustomTableViewCell: UITableViewCell {
     
-}
-
-
-
-extension UIView {
     
-    func anchor (top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?, paddingTop: CGFloat, paddingLeft: CGFloat, paddingBottom: CGFloat, paddingRight: CGFloat, width: CGFloat, height: CGFloat, enableInsets: Bool) {
-        var topInset = CGFloat(0)
-        var bottomInset = CGFloat(0)
+    private func createData(amount: Int) -> [TableViewData] {
+        let titleList = ["Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6"]
+        let descriptitonList = ["Description 1", "Description 2", "Description 3", "Description 4", "Description 5", "Description 6"]
+        var output = [TableViewData]()
         
-        if #available(iOS 11, *), enableInsets {
-            let insets = self.safeAreaInsets
-            topInset = insets.top
-            bottomInset = insets.bottom
-            
-            print("Top: \(topInset)")
-            print("bottom: \(bottomInset)")
+        for _ in 0..<amount {
+            output.append(TableViewData(with: titleList.randomElement() ?? "Error", with: "placeholder", with: descriptitonList.randomElement() ?? "Error"))
         }
-        
-        translatesAutoresizingMaskIntoConstraints = false
-        
-        if let top = top {
-            self.topAnchor.constraint(equalTo: top, constant: paddingTop+topInset).isActive = true
-        }
-        if let left = left {
-            self.leftAnchor.constraint(equalTo: left, constant: paddingLeft).isActive = true
-        }
-        if let right = right {
-            rightAnchor.constraint(equalTo: right, constant: -paddingRight).isActive = true
-        }
-        if let bottom = bottom {
-            bottomAnchor.constraint(equalTo: bottom, constant: -paddingBottom-bottomInset).isActive = true
-        }
-        if height != 0 {
-            heightAnchor.constraint(equalToConstant: height).isActive = true
-        }
-        if width != 0 {
-            widthAnchor.constraint(equalToConstant: width).isActive = true
-        }
+        return output
     }
 }
+
+
