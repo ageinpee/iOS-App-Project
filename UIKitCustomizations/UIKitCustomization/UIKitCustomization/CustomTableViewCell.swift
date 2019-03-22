@@ -20,6 +20,8 @@ class CustomTableViewCell: UITableViewCell {
     
     private let titleLabel : UILabel = {
         let label = UILabel()
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 25)
         label.text = "placeholder 1"
         return label
     }()
@@ -29,11 +31,16 @@ class CustomTableViewCell: UITableViewCell {
         image.image = UIImage(named: "placeholder")
         image.contentMode = .scaleAspectFit
         image.clipsToBounds = true
+        image.layer.borderWidth = 1.5
+        image.layer.borderColor = UIColor.blue.cgColor
+        image.layer.cornerRadius = 25
         return image
     }()
     
     private let descriptionLabel : UILabel = {
         let label = UILabel()
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 12)
         label.text = "placeholder 2"
         return label
     }()
@@ -41,6 +48,10 @@ class CustomTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        self.backgroundColor = UIColor(red: 0.16, green: 0.16, blue: 0.16, alpha: 0.7)
+//        self.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        
         addSubview(titleLabel)
         addSubview(placeholderImage)
         addSubview(descriptionLabel)

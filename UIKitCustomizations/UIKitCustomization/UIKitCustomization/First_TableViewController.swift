@@ -17,7 +17,9 @@ class First_TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        data = createData(amount: 6)
+        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        
+        data = createData(amount: Int.random(in: 3...12))
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.dataSource = self
         tableView.delegate = self
