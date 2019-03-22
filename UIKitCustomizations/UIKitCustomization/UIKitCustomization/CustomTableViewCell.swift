@@ -45,9 +45,9 @@ class CustomTableViewCell: UITableViewCell {
         addSubview(placeholderImage)
         addSubview(descriptionLabel)
         
-        titleLabel.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: frame.size.width/3, height: 100, enableInsets: false)
-        placeholderImage.anchor(top: topAnchor, left: titleLabel.rightAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: frame.size.width/3, height: 200, enableInsets: false)
-        descriptionLabel.anchor(top: topAnchor, left: placeholderImage.rightAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: frame.size.width/3, height: 200, enableInsets: false)
+        titleLabel.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: frame.size.width/3, height: 100, enableInsets: false, centerX: nil, centerY: nil)
+        placeholderImage.anchor(top: topAnchor, left: titleLabel.rightAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: frame.size.width/3, height: 200, enableInsets: false, centerX: centerXAnchor, centerY: nil)
+        descriptionLabel.anchor(top: topAnchor, left: placeholderImage.rightAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: frame.size.width/3, height: 200, enableInsets: false, centerX: nil, centerY: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
