@@ -72,6 +72,7 @@ class CustomTableViewCell: UITableViewCell {
         return button
     }()
     
+    // TODO - add the functions to the button so the button is actually working
     @objc func increment() {
         self.amount += 1
         self.amountLabel.text = String(amount)
@@ -82,6 +83,7 @@ class CustomTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        // TODO - get the correct background color and opacity
         self.backgroundColor = UIColor(red: 0.16, green: 0.16, blue: 0.16, alpha: 0.7)
 //        self.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         
