@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+protocol CustomTableViewCellDelegate {
+    func increment(cell: CustomTableViewCell)
+}
+
 class CustomTableViewCell: UITableViewCell {
     var data : TableViewData? {
         didSet {
@@ -17,6 +21,9 @@ class CustomTableViewCell: UITableViewCell {
             descriptionLabel.text = data?.description
         }
     }
+    
+    private var amount = 0
+    var delegate : CustomTableViewCellDelegate?
     
     private let titleLabel : UILabel = {
         let label = UILabel()
@@ -41,9 +48,35 @@ class CustomTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 12)
+        label.textAlignment = .right
         label.text = "placeholder 2"
         return label
     }()
+    
+    private let amountLabel : UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.textAlignment = .right
+        label.text = "0"
+        return label
+    }()
+    
+    private let incrementButton : UIButton = {
+        let button = UIButton()
+        button.setTitle("Increment", for: .normal)
+        button.backgroundColor = UIColor.blue.withAlphaComponent(0.5)
+        button.layer.cornerRadius = 10
+        button.layer.borderWidth = 0.5
+        button.layer.borderColor = UIColor.black.cgColor
+        return button
+    }()
+    
+    @objc func increment() {
+        self.amount += 1
+        self.amountLabel.text = String(amount)
+        delegate?.increment(cell: self)
+    }
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -55,14 +88,19 @@ class CustomTableViewCell: UITableViewCell {
         addSubview(titleLabel)
         addSubview(placeholderImage)
         addSubview(descriptionLabel)
+        addSubview(incrementButton)
+        addSubview(amountLabel)
         
-        titleLabel.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: frame.size.width/3, height: 100, enableInsets: false, centerX: nil, centerY: nil)
-        placeholderImage.anchor(top: topAnchor, left: titleLabel.rightAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: frame.size.width/3, height: 200, enableInsets: false, centerX: centerXAnchor, centerY: nil)
-        descriptionLabel.anchor(top: topAnchor, left: placeholderImage.rightAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: frame.size.width/3, height: 200, enableInsets: false, centerX: nil, centerY: nil)
+        titleLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 10, paddingBottom: 5, paddingRight: 5, width: 0, height: 100, enableInsets: false, centerX: nil, centerY: nil)
+        placeholderImage.anchor(top: topAnchor, left: titleLabel.rightAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 150, height: 150, enableInsets: false, centerX: centerXAnchor, centerY: nil)
+        descriptionLabel.anchor(top: topAnchor, left: placeholderImage.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 0, height: 100, enableInsets: false, centerX: nil, centerY: nil)
+        incrementButton.anchor(top: nil, left: leftAnchor, bottom: bottomAnchor, right: placeholderImage.leftAnchor, paddingTop: 15, paddingLeft: 10, paddingBottom: 15, paddingRight: 15, width: 0, height: 50, enableInsets: false, centerX: nil, centerY: nil)
+        amountLabel.anchor(top: descriptionLabel.bottomAnchor, left: placeholderImage.rightAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 0, height: 50, enableInsets: false, centerX: nil, centerY: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+        
     }
     
 }
