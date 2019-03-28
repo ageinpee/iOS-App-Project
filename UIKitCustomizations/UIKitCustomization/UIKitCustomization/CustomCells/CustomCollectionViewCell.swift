@@ -66,7 +66,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.textAlignment = .right
+        label.textAlignment = .center
         label.text = "0"
         return label
     }()

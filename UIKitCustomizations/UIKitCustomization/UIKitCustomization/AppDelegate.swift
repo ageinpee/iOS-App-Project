@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WikipediaKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

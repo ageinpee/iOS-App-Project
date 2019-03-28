@@ -12,14 +12,55 @@
 		921BED75224527ED00EF35C8 /* MemeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921BED74224527ED00EF35C8 /* MemeData.swift */; };
 		92353CF622412FE600147F0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92353CF522412FE600147F0A /* AppDelegate.swift */; };
 		92353CF822412FE600147F0A /* First_TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92353CF722412FE600147F0A /* First_TableViewController.swift */; };
-		92353CFA22412FE600147F0A /* Second_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92353CF922412FE600147F0A /* Second_ViewController.swift */; };
+		92353CFA22412FE600147F0A /* Second_CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92353CF922412FE600147F0A /* Second_CollectionViewController.swift */; };
 		92353CFD22412FE600147F0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92353CFB22412FE600147F0A /* Main.storyboard */; };
 		92353CFF22412FEC00147F0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92353CFE22412FEC00147F0A /* Assets.xcassets */; };
 		92353D0222412FEC00147F0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92353D0022412FEC00147F0A /* LaunchScreen.storyboard */; };
 		923A96AA224821AA00E1A29F /* Third_CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923A96A9224821AA00E1A29F /* Third_CollectionViewController.swift */; };
 		92BD6361224CD7CE009EEDBA /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD6360224CD7CE009EEDBA /* CustomCollectionViewCell.swift */; };
 		92BD6363224CD9D4009EEDBA /* DataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD6362224CD9D4009EEDBA /* DataGenerator.swift */; };
+		92BD6377224D3AB1009EEDBA /* WikipediaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92BD636F224D38D4009EEDBA /* WikipediaKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		92BD6379224D3BB8009EEDBA /* WikipediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD6378224D3BB8009EEDBA /* WikipediaCollectionViewCell.swift */; };
+		92BD637B224D3CD8009EEDBA /* WikipediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD637A224D3CD8009EEDBA /* WikipediaData.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		92BD636C224D38D4009EEDBA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92BD6364224D38D4009EEDBA /* WikipediaKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27E365081E81757500F39F78;
+			remoteInfo = "WikipediaKit-macOS";
+		};
+		92BD636E224D38D4009EEDBA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92BD6364224D38D4009EEDBA /* WikipediaKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27E365471E81AC6A00F39F78;
+			remoteInfo = "WikipediaKit-iOS";
+		};
+		92BD6370224D38D4009EEDBA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92BD6364224D38D4009EEDBA /* WikipediaKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27E3658A1E81C95D00F39F78;
+			remoteInfo = "WikipediaKit-watchOS";
+		};
+		92BD6372224D38D4009EEDBA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92BD6364224D38D4009EEDBA /* WikipediaKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27E365AC1E81C9E300F39F78;
+			remoteInfo = "WikipediaKit-tvOS";
+		};
+		92BD6374224D38D4009EEDBA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92BD6364224D38D4009EEDBA /* WikipediaKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 274EFCDD1EB899E90047428B;
+			remoteInfo = WikipediaKitTests;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		921BED7022451FFA00EF35C8 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -28,7 +69,7 @@
 		92353CF222412FE600147F0A /* UIKitCustomization.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitCustomization.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92353CF522412FE600147F0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92353CF722412FE600147F0A /* First_TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = First_TableViewController.swift; sourceTree = "<group>"; };
-		92353CF922412FE600147F0A /* Second_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Second_ViewController.swift; sourceTree = "<group>"; };
+		92353CF922412FE600147F0A /* Second_CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Second_CollectionViewController.swift; sourceTree = "<group>"; };
 		92353CFC22412FE600147F0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92353CFE22412FEC00147F0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92353D0122412FEC00147F0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +77,9 @@
 		923A96A9224821AA00E1A29F /* Third_CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Third_CollectionViewController.swift; sourceTree = "<group>"; };
 		92BD6360224CD7CE009EEDBA /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		92BD6362224CD9D4009EEDBA /* DataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGenerator.swift; sourceTree = "<group>"; };
+		92BD6364224D38D4009EEDBA /* WikipediaKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WikipediaKit.xcodeproj; path = "WikipediaKit-master/WikipediaKit.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		92BD6378224D3BB8009EEDBA /* WikipediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaCollectionViewCell.swift; sourceTree = "<group>"; };
+		92BD637A224D3CD8009EEDBA /* WikipediaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92BD6377224D3AB1009EEDBA /* WikipediaKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +99,7 @@
 			children = (
 				92353CF422412FE600147F0A /* UIKitCustomization */,
 				92353CF322412FE600147F0A /* Products */,
+				92BD6376224D3AB1009EEDBA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +123,7 @@
 				92353CFE22412FEC00147F0A /* Assets.xcassets */,
 				92353D0022412FEC00147F0A /* LaunchScreen.storyboard */,
 				92353D0322412FEC00147F0A /* Info.plist */,
+				92BD6364224D38D4009EEDBA /* WikipediaKit.xcodeproj */,
 			);
 			path = UIKitCustomization;
 			sourceTree = "<group>";
@@ -86,6 +133,7 @@
 			children = (
 				921BED7022451FFA00EF35C8 /* CustomTableViewCell.swift */,
 				92BD6360224CD7CE009EEDBA /* CustomCollectionViewCell.swift */,
+				92BD6378224D3BB8009EEDBA /* WikipediaCollectionViewCell.swift */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -94,7 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				92353CF722412FE600147F0A /* First_TableViewController.swift */,
-				92353CF922412FE600147F0A /* Second_ViewController.swift */,
+				92353CF922412FE600147F0A /* Second_CollectionViewController.swift */,
 				923A96A9224821AA00E1A29F /* Third_CollectionViewController.swift */,
 			);
 			path = Controller;
@@ -105,8 +153,28 @@
 			children = (
 				921BED74224527ED00EF35C8 /* MemeData.swift */,
 				92BD6362224CD9D4009EEDBA /* DataGenerator.swift */,
+				92BD637A224D3CD8009EEDBA /* WikipediaData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		92BD6365224D38D4009EEDBA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92BD636D224D38D4009EEDBA /* WikipediaKit.framework */,
+				92BD636F224D38D4009EEDBA /* WikipediaKit.framework */,
+				92BD6371224D38D4009EEDBA /* WikipediaKit.framework */,
+				92BD6373224D38D4009EEDBA /* WikipediaKit.framework */,
+				92BD6375224D38D4009EEDBA /* WikipediaKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92BD6376224D3AB1009EEDBA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,12 +224,56 @@
 			mainGroup = 92353CE922412FE600147F0A;
 			productRefGroup = 92353CF322412FE600147F0A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 92BD6365224D38D4009EEDBA /* Products */;
+					ProjectRef = 92BD6364224D38D4009EEDBA /* WikipediaKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				92353CF122412FE600147F0A /* UIKitCustomization */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		92BD636D224D38D4009EEDBA /* WikipediaKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = WikipediaKit.framework;
+			remoteRef = 92BD636C224D38D4009EEDBA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		92BD636F224D38D4009EEDBA /* WikipediaKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = WikipediaKit.framework;
+			remoteRef = 92BD636E224D38D4009EEDBA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		92BD6371224D38D4009EEDBA /* WikipediaKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = WikipediaKit.framework;
+			remoteRef = 92BD6370224D38D4009EEDBA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		92BD6373224D38D4009EEDBA /* WikipediaKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = WikipediaKit.framework;
+			remoteRef = 92BD6372224D38D4009EEDBA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		92BD6375224D38D4009EEDBA /* WikipediaKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = WikipediaKitTests.xctest;
+			remoteRef = 92BD6374224D38D4009EEDBA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		92353CF022412FE600147F0A /* Resources */ = {
@@ -185,10 +297,12 @@
 				921BED75224527ED00EF35C8 /* MemeData.swift in Sources */,
 				923A96AA224821AA00E1A29F /* Third_CollectionViewController.swift in Sources */,
 				92BD6361224CD7CE009EEDBA /* CustomCollectionViewCell.swift in Sources */,
-				92353CFA22412FE600147F0A /* Second_ViewController.swift in Sources */,
+				92353CFA22412FE600147F0A /* Second_CollectionViewController.swift in Sources */,
 				92353CF622412FE600147F0A /* AppDelegate.swift in Sources */,
+				92BD6379224D3BB8009EEDBA /* WikipediaCollectionViewCell.swift in Sources */,
 				92BD6363224CD9D4009EEDBA /* DataGenerator.swift in Sources */,
 				921BED7122451FFA00EF35C8 /* CustomTableViewCell.swift in Sources */,
+				92BD637B224D3CD8009EEDBA /* WikipediaData.swift in Sources */,
 				92353CF822412FE600147F0A /* First_TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
