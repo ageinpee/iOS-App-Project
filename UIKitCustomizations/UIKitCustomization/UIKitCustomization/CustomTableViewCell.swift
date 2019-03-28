@@ -30,17 +30,20 @@ class CustomTableViewCell: UITableViewCell {
         label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 25)
         label.text = "placeholder 1"
+        label.minimumScaleFactor = 0.2
+        label.adjustsFontSizeToFitWidth = true
+        label.numberOfLines = 1
         return label
     }()
     
     private let placeholderImage : UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "placeholder")
-        image.contentMode = .scaleAspectFit
+        image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
-        image.layer.borderWidth = 1.5
-        image.layer.borderColor = UIColor.blue.cgColor
-        image.layer.cornerRadius = 25
+        image.layer.borderWidth = 0.5
+        image.layer.borderColor = UIColor.darkGray.cgColor
+        image.layer.cornerRadius = 3
         return image
     }()
     
@@ -50,6 +53,9 @@ class CustomTableViewCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 12)
         label.textAlignment = .right
         label.text = "placeholder 2"
+        label.minimumScaleFactor = 0.2
+        label.adjustsFontSizeToFitWidth = true
+        label.numberOfLines = 0
         return label
     }()
     
@@ -66,14 +72,15 @@ class CustomTableViewCell: UITableViewCell {
         let button = UIButton()
         button.setTitle("Increment", for: .normal)
         button.backgroundColor = UIColor.blue.withAlphaComponent(0.5)
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = 3
         button.layer.borderWidth = 0.5
         button.layer.borderColor = UIColor.black.cgColor
         return button
     }()
     
     // TODO - add the functions to the button so the button is actually working
-    @objc func increment() {
+    @objc func increment(sender: UIButton!) {
+        print("incr")
         self.amount += 1
         self.amountLabel.text = String(amount)
         delegate?.increment(cell: self)
@@ -93,11 +100,13 @@ class CustomTableViewCell: UITableViewCell {
         addSubview(incrementButton)
         addSubview(amountLabel)
         
-        titleLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 10, paddingBottom: 5, paddingRight: 5, width: 0, height: 100, enableInsets: false, centerX: nil, centerY: nil)
+        incrementButton.addTarget(self, action: #selector(increment), for: .touchUpInside)
+        
+        titleLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 20, paddingBottom: 5, paddingRight: 5, width: 0, height: 100, enableInsets: false, centerX: nil, centerY: nil)
         placeholderImage.anchor(top: topAnchor, left: titleLabel.rightAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 150, height: 150, enableInsets: false, centerX: centerXAnchor, centerY: nil)
-        descriptionLabel.anchor(top: topAnchor, left: placeholderImage.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 0, height: 100, enableInsets: false, centerX: nil, centerY: nil)
-        incrementButton.anchor(top: nil, left: leftAnchor, bottom: bottomAnchor, right: placeholderImage.leftAnchor, paddingTop: 15, paddingLeft: 10, paddingBottom: 15, paddingRight: 15, width: 0, height: 50, enableInsets: false, centerX: nil, centerY: nil)
-        amountLabel.anchor(top: descriptionLabel.bottomAnchor, left: placeholderImage.rightAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 0, height: 50, enableInsets: false, centerX: nil, centerY: nil)
+        descriptionLabel.anchor(top: topAnchor, left: placeholderImage.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 20, width: 0, height: 100, enableInsets: false, centerX: nil, centerY: nil)
+        incrementButton.anchor(top: nil, left: leftAnchor, bottom: bottomAnchor, right: placeholderImage.leftAnchor, paddingTop: 15, paddingLeft: 20, paddingBottom: 5, paddingRight: 15, width: 0, height: 50, enableInsets: false, centerX: nil, centerY: nil)
+        amountLabel.anchor(top: descriptionLabel.bottomAnchor, left: placeholderImage.rightAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 20, width: 0, height: 50, enableInsets: false, centerX: nil, centerY: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
