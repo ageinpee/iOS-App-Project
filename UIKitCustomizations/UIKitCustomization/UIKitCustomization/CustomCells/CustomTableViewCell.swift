@@ -14,7 +14,7 @@ protocol CustomTableViewCellDelegate {
 }
 
 class CustomTableViewCell: UITableViewCell {
-    var data : TableViewData? {
+    var data : MemeData? {
         didSet {
             titleLabel.text = data?.title
             placeholderImage.image = UIImage(named: (data?.imageName)!)
@@ -32,7 +32,8 @@ class CustomTableViewCell: UITableViewCell {
         label.text = "placeholder 1"
         label.minimumScaleFactor = 0.2
         label.adjustsFontSizeToFitWidth = true
-        label.numberOfLines = 1
+        label.numberOfLines = 2
+        label.lineBreakMode = .byTruncatingTail
         return label
     }()
     
@@ -56,6 +57,7 @@ class CustomTableViewCell: UITableViewCell {
         label.minimumScaleFactor = 0.2
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
         return label
     }()
     
@@ -80,7 +82,6 @@ class CustomTableViewCell: UITableViewCell {
     
     // TODO - add the functions to the button so the button is actually working
     @objc func increment(sender: UIButton!) {
-        print("incr")
         self.amount += 1
         self.amountLabel.text = String(amount)
         delegate?.increment(cell: self)

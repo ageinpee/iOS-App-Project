@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TableViewData {
+struct MemeData {
     var title = ""
     var imageName = "placeholder"
     var description = ""
