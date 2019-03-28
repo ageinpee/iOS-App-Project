@@ -55,6 +55,7 @@ class WikipediaCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
         self.backgroundColor = UIColor(red: 0.16, green: 0.16, blue: 0.16, alpha: 0.7)
+        self.layer.cornerRadius = 5
         
         addSubview(titleLabel)
         addSubview(textLabel)

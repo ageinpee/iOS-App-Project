@@ -23,6 +23,8 @@ class Second_CollectionViewController: UIViewController, UICollectionViewDataSou
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         layout.itemSize = CGSize(width: 125, height: 125)
+        layout.minimumLineSpacing = 5
+        layout.minimumInteritemSpacing = 5
         
         data = wikiData.loadMostPopular(amount: 20)
         
