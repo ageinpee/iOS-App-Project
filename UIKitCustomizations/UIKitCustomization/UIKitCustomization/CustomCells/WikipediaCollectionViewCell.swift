@@ -15,10 +15,10 @@ protocol WikipediaCollectionViewCellDelegate {
 }
 
 class WikipediaCollectionViewCell: UICollectionViewCell {
-    var data : WikipediaArticlePreview? {
+    var data : WikipediaArticle? {
         didSet {
-            titleLabel.text = data?.displayTitle
-            textLabel.text = data?.description
+            titleLabel.text = data?.displayTitle.htmlToString
+            textLabel.text = data?.displayText.htmlToString
         }
     }
     
@@ -41,8 +41,8 @@ class WikipediaCollectionViewCell: UICollectionViewCell {
     private let textLabel : UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 10)
+        label.textAlignment = .left
         label.text = "placeholder 2"
         label.minimumScaleFactor = 0.2
         label.adjustsFontSizeToFitWidth = true

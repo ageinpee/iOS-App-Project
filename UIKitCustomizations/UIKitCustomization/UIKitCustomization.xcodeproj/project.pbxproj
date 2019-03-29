@@ -22,6 +22,7 @@
 		92BD6377224D3AB1009EEDBA /* WikipediaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92BD636F224D38D4009EEDBA /* WikipediaKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		92BD6379224D3BB8009EEDBA /* WikipediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD6378224D3BB8009EEDBA /* WikipediaCollectionViewCell.swift */; };
 		92BD637B224D3CD8009EEDBA /* WikipediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD637A224D3CD8009EEDBA /* WikipediaData.swift */; };
+		92BD637D224E64F2009EEDBA /* StringHTMLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD637C224E64F2009EEDBA /* StringHTMLExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		92BD6364224D38D4009EEDBA /* WikipediaKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WikipediaKit.xcodeproj; path = "WikipediaKit-master/WikipediaKit.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		92BD6378224D3BB8009EEDBA /* WikipediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		92BD637A224D3CD8009EEDBA /* WikipediaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaData.swift; sourceTree = "<group>"; };
+		92BD637C224E64F2009EEDBA /* StringHTMLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StringHTMLExtension.swift; path = CustomCells/StringHTMLExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			children = (
 				92353CF522412FE600147F0A /* AppDelegate.swift */,
 				921BED72224520D100EF35C8 /* UIViewExtension.swift */,
+				92BD637C224E64F2009EEDBA /* StringHTMLExtension.swift */,
 				92BD635E224CD776009EEDBA /* Controller */,
 				92BD635D224CD75D009EEDBA /* CustomCells */,
 				92BD635F224CD789009EEDBA /* Model */,
@@ -294,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				921BED73224520D100EF35C8 /* UIViewExtension.swift in Sources */,
+				92BD637D224E64F2009EEDBA /* StringHTMLExtension.swift in Sources */,
 				921BED75224527ED00EF35C8 /* MemeData.swift in Sources */,
 				923A96AA224821AA00E1A29F /* Third_CollectionViewController.swift in Sources */,
 				92BD6361224CD7CE009EEDBA /* CustomCollectionViewCell.swift in Sources */,

@@ -11,22 +11,28 @@ import WikipediaKit
 
 class Second_CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    private var data : [WikipediaArticlePreview] = [WikipediaArticlePreview]()
+    private var data : [WikipediaArticle?] = [WikipediaArticle?]() {
+        didSet {
+            self.collectionView.reloadData()
+        }
+    }
     private var collectionView = UICollectionView(frame: CGRect.init(), collectionViewLayout: UICollectionViewFlowLayout())
     
     let cellID = "Cell"
-    let wikiData = WikipediaData()
+    
+    private var language = WikipediaLanguage("en")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        layout.itemSize = CGSize(width: 125, height: 125)
+        layout.itemSize = CGSize(width: 190, height: 300)
         layout.minimumLineSpacing = 5
         layout.minimumInteritemSpacing = 5
         
-        data = wikiData.loadMostPopular(amount: 20)
+        self.prepareWikipediaAPI(language: WikipediaLanguage("en"))
+        self.fetchMostRead(amount: 7)
         
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView.frame = self.view.frame
@@ -50,6 +56,67 @@ class Second_CollectionViewController: UIViewController, UICollectionViewDataSou
         return cell
     }
 
+    // MARK - Load Data from Wikipedia
+    
+    private var cachedMostReadArticlePreview = [WikipediaArticlePreview]()
+    var articles = [WikipediaArticle]()
+    
+    func prepareWikipediaAPI(language: WikipediaLanguage) {
+        WikipediaNetworking.appAuthorEmailForAPI = "henrik.peters.98@web.de"
+        
+        self.language = language
+    }
+    
+//    func fetchMostReadPreview() {
+//        var output = [WikipediaArticlePreview?]()
+//        let yesterday = Date(timeIntervalSinceNow: -60*60*24)
+//        let _ = Wikipedia.shared.requestMostReadArticles(language: language, date: yesterday, completion: { (articlePreviews, date, resultsLanguage, error) in
+//            guard error == nil else { return }
+//            guard let articlePreviews = articlePreviews else { return }
+//
+//            for a in articlePreviews {
+//                output.append(a)
+//            }
+//            self.data = output
+//            DispatchQueue.main.async(execute: {self.collectionView.reloadData()})
+//        })
+//    }
+    
+//    func fetchMostReadPreview(amount: Int) {
+//        var output = [WikipediaArticlePreview?]()
+//        let yesterday = Date(timeIntervalSinceNow: -60*60*24)
+//        let _ = Wikipedia.shared.requestMostReadArticles(language: language, date: yesterday, completion: { (articlePreviews, date, resultsLanguage, error) in
+//            guard error == nil else { return }
+//            guard let articlePreviews = articlePreviews else { return }
+//            
+//            for a in articlePreviews {
+//                output.append(a)
+//            }
+//            self.data = Array(output.prefix(amount))
+//            DispatchQueue.main.async(execute: {self.collectionView.reloadData()})
+//        })
+//    }
+    
+    func fetchMostRead(amount: Int) {
+        self.data = [WikipediaArticle?]()
+        let yesterday = Date(timeIntervalSinceNow: -60*60*24)
+        let _ = Wikipedia.shared.requestMostReadArticles(language: self.language, date: yesterday, completion: { (articlePreviews, date, resultsLanguage, error) in
+            guard error == nil else { return }
+            guard let articlePreviews = articlePreviews else { return }
+            
+            let articlePreviewsFirstX = Array(articlePreviews.prefix(amount))
+            for a in articlePreviewsFirstX {
+                let imageWidth = 500
+                let _ = Wikipedia.shared.requestArticle(language: self.language, title: a.displayTitle, imageWidth: imageWidth, completion: { (article, error) in
+                    guard error == nil else { return }
+                    guard let article = article else { return }
+                    
+                    self.data.append(article)
+                    DispatchQueue.main.async(execute: { print("dispatch executed"); self.collectionView.reloadData()})
+                })
+            }
+        })
+    }
 
 }
 
