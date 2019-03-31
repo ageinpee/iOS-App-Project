@@ -45,6 +45,13 @@ class Second_CollectionViewController: UIViewController, UICollectionViewDataSou
         self.view.addSubview(collectionView)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.prepareWikipediaAPI(language: WikipediaLanguage("en"))
+        self.fetchMostRead(amount: 7)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
