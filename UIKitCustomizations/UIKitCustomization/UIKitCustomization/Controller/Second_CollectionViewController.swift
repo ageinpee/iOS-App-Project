@@ -16,6 +16,7 @@ class Second_CollectionViewController: UIViewController, UICollectionViewDataSou
             self.collectionView.reloadData()
         }
     }
+    
     private var collectionView = UICollectionView(frame: CGRect.init(), collectionViewLayout: UICollectionViewFlowLayout())
     
     let cellID = "Cell"
@@ -111,7 +112,8 @@ class Second_CollectionViewController: UIViewController, UICollectionViewDataSou
                     guard error == nil else { return }
                     guard let article = article else { return }
                     
-                    self.data.append(article)
+                    let temp = self.data + [article]
+                    self.data = temp
                     DispatchQueue.main.async(execute: { print("dispatch executed"); self.collectionView.reloadData()})
                 })
             }
