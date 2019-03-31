@@ -23,6 +23,7 @@
 		92BD6379224D3BB8009EEDBA /* WikipediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD6378224D3BB8009EEDBA /* WikipediaCollectionViewCell.swift */; };
 		92BD637B224D3CD8009EEDBA /* WikipediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD637A224D3CD8009EEDBA /* WikipediaData.swift */; };
 		92BD637D224E64F2009EEDBA /* StringHTMLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD637C224E64F2009EEDBA /* StringHTMLExtension.swift */; };
+		92BD637F22513121009EEDBA /* Fourth_NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD637E22513121009EEDBA /* Fourth_NavigationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		92BD6378224D3BB8009EEDBA /* WikipediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		92BD637A224D3CD8009EEDBA /* WikipediaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaData.swift; sourceTree = "<group>"; };
 		92BD637C224E64F2009EEDBA /* StringHTMLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StringHTMLExtension.swift; path = CustomCells/StringHTMLExtension.swift; sourceTree = "<group>"; };
+		92BD637E22513121009EEDBA /* Fourth_NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fourth_NavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				92353CF722412FE600147F0A /* First_TableViewController.swift */,
 				92353CF922412FE600147F0A /* Second_CollectionViewController.swift */,
 				923A96A9224821AA00E1A29F /* Third_CollectionViewController.swift */,
+				92BD637E22513121009EEDBA /* Fourth_NavigationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				92BD637D224E64F2009EEDBA /* StringHTMLExtension.swift in Sources */,
 				921BED75224527ED00EF35C8 /* MemeData.swift in Sources */,
 				923A96AA224821AA00E1A29F /* Third_CollectionViewController.swift in Sources */,
+				92BD637F22513121009EEDBA /* Fourth_NavigationViewController.swift in Sources */,
 				92BD6361224CD7CE009EEDBA /* CustomCollectionViewCell.swift in Sources */,
 				92353CFA22412FE600147F0A /* Second_CollectionViewController.swift in Sources */,
 				92353CF622412FE600147F0A /* AppDelegate.swift in Sources */,

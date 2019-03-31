@@ -130,4 +130,3 @@ class Second_CollectionViewController: UIViewController, UICollectionViewDataSou
     }
     
 }
-
