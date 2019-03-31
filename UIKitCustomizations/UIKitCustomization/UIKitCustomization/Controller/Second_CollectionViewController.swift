@@ -102,7 +102,7 @@ class Second_CollectionViewController: UIViewController, UICollectionViewDataSou
         self.data = [WikipediaArticle?]()
         let yesterday = Date(timeIntervalSinceNow: -60*60*24)
         let _ = Wikipedia.shared.requestMostReadArticles(language: self.language, date: yesterday, completion: { (articlePreviews, date, resultsLanguage, error) in
-            guard error == nil else { return }
+            guard error == nil else { self.showLoadingErrorAlert(); return }
             guard let articlePreviews = articlePreviews else { return }
             
             let articlePreviewsFirstX = Array(articlePreviews.prefix(amount))
@@ -119,6 +119,15 @@ class Second_CollectionViewController: UIViewController, UICollectionViewDataSou
             }
         })
     }
-
+    
+    private func showLoadingErrorAlert() {
+        let alert = UIAlertController(title: "Network-Error", message: "Something went wrong while loading data", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: { (alertAction) in
+            self.fetchMostRead(amount: 7)
+        }))
+        self.present(alert, animated: true)
+    }
+    
 }
 
