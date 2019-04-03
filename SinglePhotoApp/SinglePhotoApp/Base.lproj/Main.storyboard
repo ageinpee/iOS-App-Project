@@ -55,7 +55,7 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9T0-1W-iP2">
                                 <rect key="frame" x="0.0" y="596" width="414" height="216"/>
                             </pickerView>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3Qm-SJ-9C2">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3Qm-SJ-9C2" customClass="CustomSlider" customModule="SinglePhotoApp" customModuleProvider="target">
                                 <rect key="frame" x="28" y="294" width="358" height="31"/>
                                 <connections>
                                     <action selector="sliderChangedAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="zko-h7-YE3"/>

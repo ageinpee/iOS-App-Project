@@ -38,6 +38,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.setupButtons()
+        self.styleSlider()
         self.pickerBackgroundView.setGradientBackground(colorOne: UIColor.black.withAlphaComponent(0.0),
                                               colorTwo: UIColor.black.withAlphaComponent(0.7))
         
@@ -64,7 +65,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     @IBAction func sliderChangedAction(_ sender: Any) {
-        print("slided")
         audioPlayer.seek(to: CMTime(seconds: Double(self.playerSlider!.value), preferredTimescale: 60000), toleranceBefore: .zero, toleranceAfter: .zero)
         audioPlayer.play()
     }
@@ -86,7 +86,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return NSAttributedString(string: titles[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
     }
     
-    func setupButtons() {
+    private func styleSlider() {
+        self.playerSlider.minimumTrackTintColor = UIColor.black.withAlphaComponent(0.6)
+    }
+    
+    private func setupButtons() {
         self.playButton.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         self.playButton.layer.cornerRadius = 10
         self.playButton.layer.borderColor = UIColor.white.cgColor
@@ -100,5 +104,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         self.stopButton.layer.borderWidth = 1
         self.stopButton.setImage(UIImage(named: "icon_stop"), for: .normal)
         self.stopButton.imageEdgeInsets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
+    }
+}
+
+class CustomSlider: UISlider {
+    
+    override func trackRect(forBounds bounds: CGRect) -> CGRect {
+        var newBounds = super.trackRect(forBounds: bounds)
+        newBounds.size.height = 6
+        return newBounds
     }
 }
