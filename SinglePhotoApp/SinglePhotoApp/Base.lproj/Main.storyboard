@@ -58,7 +58,7 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3Qm-SJ-9C2">
                                 <rect key="frame" x="28" y="294" width="358" height="31"/>
                                 <connections>
-                                    <action selector="sliderChangedAction:" destination="BYZ-38-t0r" eventType="touchCancel" id="BPW-HE-eIa"/>
+                                    <action selector="sliderChangedAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="zko-h7-YE3"/>
                                 </connections>
                             </slider>
                         </subviews>

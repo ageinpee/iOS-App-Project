@@ -32,7 +32,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                       URL(fileURLWithPath: Bundle.main.path(forResource: "Die Siedler V Das Erbe der Könige OST- Der schwarze Ritter", ofType: "mp3")!),]
     let titles = ["Dario", "Das Erbe der Könige", "Ein Dorf in Trümmern", "Willkommen in Cleycourt", "Das Heer aus dem Süden", "Die Festung im Schnee", "Evelance", "Prophezeiungen", "Der Königliche Hof", "Im sicheren Hafen", "Reise gen Süden", "Norfolk", "Der schwarze Ritter"]
     var currentSelected = URL(fileURLWithPath: Bundle.main.path(forResource: "Die Siedler V Das Erbe der Könige OST- Dario", ofType: "mp3")!)
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer = AVPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,35 +41,32 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         self.pickerBackgroundView.setGradientBackground(colorOne: UIColor.black.withAlphaComponent(0.0),
                                               colorTwo: UIColor.black.withAlphaComponent(0.7))
         
+        self.playerSlider.value = 0
         currentSelected = dataSource[0]
         songPicker.delegate = self
         songPicker.dataSource = self
     }
-
+    
     @IBAction func stopButtonAction(_ sender: Any) {
-        audioPlayer.stop()
+        audioPlayer.pause()
     }
     
     @IBAction func playButtonAction(_ sender: Any) {
-        do {
-            self.playerSlider.minimumValue = 0
-            self.playerSlider.maximumValue = Float(AVURLAsset(url: currentSelected).duration.seconds)
-            audioPlayer = try AVAudioPlayer(contentsOf: currentSelected)
-            audioPlayer.play()
-        } catch {
-            print(error)
+        
+        self.playerSlider.minimumValue = 0
+        self.playerSlider.maximumValue = Float(AVURLAsset(url: currentSelected).duration.seconds)
+        audioPlayer = AVPlayer(url: currentSelected)
+        audioPlayer.addPeriodicTimeObserver(forInterval: CMTimeMake(value: 1, timescale: 30), queue: .main) { time in
+            let fraction = CMTimeGetSeconds(time)
+            self.playerSlider.value = Float(fraction)
         }
+        audioPlayer.play()
     }
     
     @IBAction func sliderChangedAction(_ sender: Any) {
-        do {
-            self.playerSlider.minimumValue = 0
-            self.playerSlider.maximumValue = Float(AVURLAsset(url: currentSelected).duration.seconds)
-            audioPlayer = try AVAudioPlayer(contentsOf: currentSelected)
-            audioPlayer.play(atTime: audioPlayer.deviceCurrentTime + Double(self.playerSlider.value))
-        } catch {
-            print(error)
-        }
+        print("slided")
+        audioPlayer.seek(to: CMTime(seconds: Double(self.playerSlider!.value), preferredTimescale: 60000), toleranceBefore: .zero, toleranceAfter: .zero)
+        audioPlayer.play()
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -81,7 +78,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        currentSelected = dataSource[row]
+        self.currentSelected = dataSource[row]
+        self.playerSlider.value = 0
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
