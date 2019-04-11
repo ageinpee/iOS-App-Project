@@ -72,15 +72,10 @@ class CustomTableViewCell: UITableViewCell {
     
     private let incrementButton : UIButton = {
         let button = UIButton()
-        button.setTitle("Increment", for: .normal)
-        button.backgroundColor = UIColor.blue.withAlphaComponent(0.5)
-        button.layer.cornerRadius = 3
-        button.layer.borderWidth = 0.5
-        button.layer.borderColor = UIColor.black.cgColor
+        button.backgroundColor = UIColor.black.withAlphaComponent(0.0)
         return button
     }()
     
-    // TODO - add the functions to the button so the button is actually working
     @objc func increment(sender: UIButton!) {
         self.amount += 1
         self.amountLabel.text = String(amount)
@@ -91,14 +86,12 @@ class CustomTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        // TODO - get the correct background color and opacity
         self.backgroundColor = UIColor(red: 0.16, green: 0.16, blue: 0.16, alpha: 0.7)
-//        self.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         
         addSubview(titleLabel)
         addSubview(placeholderImage)
         addSubview(descriptionLabel)
-        addSubview(incrementButton)
+        insertSubview(incrementButton, aboveSubview: placeholderImage)
         addSubview(amountLabel)
         
         incrementButton.addTarget(self, action: #selector(increment), for: .touchUpInside)
@@ -106,13 +99,12 @@ class CustomTableViewCell: UITableViewCell {
         titleLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 20, paddingBottom: 5, paddingRight: 5, width: 0, height: 100, enableInsets: false, centerX: nil, centerY: nil)
         placeholderImage.anchor(top: topAnchor, left: titleLabel.rightAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 150, height: 150, enableInsets: false, centerX: centerXAnchor, centerY: nil)
         descriptionLabel.anchor(top: topAnchor, left: placeholderImage.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 20, width: 0, height: 100, enableInsets: false, centerX: nil, centerY: nil)
-        incrementButton.anchor(top: nil, left: leftAnchor, bottom: bottomAnchor, right: placeholderImage.leftAnchor, paddingTop: 15, paddingLeft: 20, paddingBottom: 5, paddingRight: 15, width: 0, height: 50, enableInsets: false, centerX: nil, centerY: nil)
+        incrementButton.anchor(top: placeholderImage.topAnchor, left: placeholderImage.leftAnchor, bottom: placeholderImage.bottomAnchor, right: placeholderImage.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false, centerX: nil, centerY: nil)
         amountLabel.anchor(top: descriptionLabel.bottomAnchor, left: placeholderImage.rightAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 20, width: 0, height: 50, enableInsets: false, centerX: nil, centerY: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-        
     }
     
 }
