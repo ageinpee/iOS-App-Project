@@ -62,6 +62,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             self.playerSlider.value = Float(fraction)
         }
         audioPlayer.play()
+        print("executed")
     }
     
     @IBAction func sliderChangedAction(_ sender: Any) {
