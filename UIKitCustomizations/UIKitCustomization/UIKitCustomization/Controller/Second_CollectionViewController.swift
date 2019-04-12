@@ -11,6 +11,7 @@ import WikipediaKit
 
 class Second_CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    //TODO: Wikipedia API is not working properly  -->  fix it
     private var data : [WikipediaArticle?] = [WikipediaArticle?]() {
         didSet {
             self.collectionView.reloadData()

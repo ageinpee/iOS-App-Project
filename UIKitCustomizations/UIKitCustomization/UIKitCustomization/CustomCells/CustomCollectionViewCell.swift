@@ -73,16 +73,10 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     private let incrementButton : UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "up-icon-white"), for: .normal)
-        button.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        button.backgroundColor = UIColor.blue.withAlphaComponent(0.5)
-        button.layer.cornerRadius = 3
-        button.layer.borderWidth = 0.5
-        button.layer.borderColor = UIColor.black.cgColor
+        button.backgroundColor = UIColor.black.withAlphaComponent(0.0)
         return button
     }()
     
-    // TODO - add the functions to the button so the button is actually working
     @objc func increment(sender: UIButton!) {
         self.amount += 1
         self.amountLabel.text = String(amount)
@@ -97,16 +91,16 @@ class CustomCollectionViewCell: UICollectionViewCell {
         addSubview(titleLabel)
         addSubview(placeholderImage)
         addSubview(descriptionLabel)
-        addSubview(incrementButton)
-        addSubview(amountLabel)
+        insertSubview(incrementButton, aboveSubview: placeholderImage)
+        insertSubview(amountLabel, aboveSubview: titleLabel)
         
         incrementButton.addTarget(self, action: #selector(increment), for: .touchUpInside)
         
-        placeholderImage.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 120, height: 120, enableInsets: false, centerX: nil, centerY: nil)
-        titleLabel.anchor(top: placeholderImage.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 0, height: 25, enableInsets: false, centerX: centerXAnchor, centerY: nil)
-        descriptionLabel.anchor(top: titleLabel.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 0, height: 50, enableInsets: false, centerX: nil, centerY: nil)
-        amountLabel.anchor(top: topAnchor, left: placeholderImage.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 0, height: 0, enableInsets: false, centerX: nil, centerY: nil)
-        incrementButton.anchor(top: amountLabel.bottomAnchor, left: placeholderImage.rightAnchor, bottom: titleLabel.topAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 40, height: 40, enableInsets: false, centerX: nil, centerY: nil)
+        placeholderImage.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 30, paddingBottom: 5, paddingRight: 30, width: 100, height: 100, enableInsets: false, centerX: nil, centerY: nil)
+        titleLabel.anchor(top: placeholderImage.bottomAnchor, left: leftAnchor, bottom: nil, right: leftAnchor, paddingTop: 0, paddingLeft: 5, paddingBottom: 0, paddingRight: 5, width: 0, height: 20, enableInsets: false, centerX: centerXAnchor, centerY: nil)
+        amountLabel.anchor(top: titleLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 5, paddingBottom: 0, paddingRight: 5, width: 0, height: 0, enableInsets: false, centerX: nil, centerY: nil)
+        descriptionLabel.anchor(top: amountLabel.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 0, height: 50, enableInsets: false, centerX: nil, centerY: nil)
+        incrementButton.anchor(top: placeholderImage.topAnchor, left: placeholderImage.leftAnchor, bottom: placeholderImage.bottomAnchor, right: placeholderImage.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false, centerX: nil, centerY: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
