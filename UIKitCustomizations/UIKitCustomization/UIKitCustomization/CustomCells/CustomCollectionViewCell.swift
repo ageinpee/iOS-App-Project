@@ -92,14 +92,14 @@ class CustomCollectionViewCell: UICollectionViewCell {
         addSubview(placeholderImage)
         addSubview(descriptionLabel)
         insertSubview(incrementButton, aboveSubview: placeholderImage)
-        addSubview(amountLabel)
+        insertSubview(amountLabel, aboveSubview: titleLabel)
         
         incrementButton.addTarget(self, action: #selector(increment), for: .touchUpInside)
         
         placeholderImage.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 30, paddingBottom: 5, paddingRight: 30, width: 100, height: 100, enableInsets: false, centerX: nil, centerY: nil)
-        titleLabel.anchor(top: placeholderImage.bottomAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 0, height: 25, enableInsets: false, centerX: centerXAnchor, centerY: nil)
-        descriptionLabel.anchor(top: titleLabel.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 0, height: 50, enableInsets: false, centerX: nil, centerY: nil)
-        amountLabel.anchor(top: placeholderImage.bottomAnchor, left: titleLabel.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 0, height: 0, enableInsets: false, centerX: nil, centerY: nil)
+        titleLabel.anchor(top: placeholderImage.bottomAnchor, left: leftAnchor, bottom: nil, right: leftAnchor, paddingTop: 0, paddingLeft: 5, paddingBottom: 0, paddingRight: 5, width: 0, height: 20, enableInsets: false, centerX: centerXAnchor, centerY: nil)
+        amountLabel.anchor(top: titleLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 5, paddingBottom: 0, paddingRight: 5, width: 0, height: 0, enableInsets: false, centerX: nil, centerY: nil)
+        descriptionLabel.anchor(top: amountLabel.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 0, height: 50, enableInsets: false, centerX: nil, centerY: nil)
         incrementButton.anchor(top: placeholderImage.topAnchor, left: placeholderImage.leftAnchor, bottom: placeholderImage.bottomAnchor, right: placeholderImage.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false, centerX: nil, centerY: nil)
     }
     
